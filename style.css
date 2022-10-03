@@ -1,0 +1,151 @@
+*{
+    font-family: montserrat;
+}
+
+:root {
+    --blue : #27187E;
+    --navy : #758BFD;
+    --grey : #AEB8FE;
+    --white : #F1F2F6;
+    --orange : #ff8600;
+
+}
+
+/* navbar */
+.navbar {
+    background-color: var(--white);
+}
+.navbar .login {
+    border: var(--orange) 2px solid;
+    color: var(--orange);
+    margin-left: 30px;
+    border-radius: 5px;
+    font-weight: 500;
+    background-color: var(--white);
+    text-decoration: none;
+    padding: .5rem 1.3rem;
+}
+
+.navbar .login:hover {
+    background: var(--orange);
+    color: var(--white);
+}
+.navbar .nav-item {
+    margin-left: 20px;
+}
+.nav-link{
+    color: var(--navy);
+
+}
+.navbar-nav a{
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.navbar-nav .dropdown .dropdown-item{
+    font-size: 15px;
+    text-transform: none;
+    font-weight: 500;
+}
+
+.navbar-light .navbar-brand {
+    margin-left: 10%;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--blue);
+    letter-spacing: 2px;
+}
+
+.navbar-toggler {
+    padding: 1px 5px;
+    font-size: 18px;
+    line-height: 0.3;
+}
+@media only screen and (max-width: 1023px) {
+    .navbar .nav-item {
+        margin: auto;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .carousel-caption {
+        bottom: 165px;
+    }
+
+    .carousel-caption .fadeInDown{
+        font-size: 30px;
+    }
+
+    /* .navbar .login {
+        display: none;
+    } */
+
+    .w-100 {
+        height: 50vh;
+    }
+
+    .navbar-light .navbar-brand {
+        margin: auto;
+    }
+}
+
+
+
+/* Carousel */
+.carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    
+}
+
+.carousel-caption {
+    bottom: 220px;
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.carousel-caption h5 {
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--white);
+    padding-bottom: 20px;
+    
+}
+
+.carousel-inner::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.w-100 {
+    height: 100vh;
+    
+}
+
+Infrastructure*/
+
+ .infrastructure { 
+    background-color: var(--white);
+    padding: 50px 0;
+}
+
+.infrastructure h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--blue);
+    letter-spacing: 2px;
+    padding-bottom: 20px;
+}
