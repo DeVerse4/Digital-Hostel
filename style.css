@@ -1,29 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&display=swap');
 
 
 * {
-    font-family: montserrat;
+    font-family: montserrat !important;
 }
 html {
     scroll-behavior: smooth;
 }
 
 :root {
-    --blue: #27187E;
-    --navy: #758BFD;
-    --grey: #AEB8FE;
-    --white: #F1F2F6;
-    --orange: #ff8600;
+    --blue: rgb(39, 24, 126);
+    --navy: rgb(119, 142, 253);
+    --grey: rgb(174, 184, 254);
+    --white: rgb(241, 242, 246);
+    --orange: rgb(255, 134, 0);
 }
 
 body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Nunito Sans', sans-serif;
-}
-h1, h2, h3, h4, h5, h6, p, button {
-    font-family: 'Nunito Sans', sans-serif;
 }
 
 /* navbar */
@@ -98,8 +94,34 @@ h1, h2, h3, h4, h5, h6, p, button {
         width: 80%;    
     }
 }
+@media only screen and (max-width: 430px) {
+    .usefulLinks {
+        display: none;
+    }
+    .facility {
+        text-align: justify;
+        margin-left: 15px;
+    }
+
+}
+
+@media only screen and (max-width: 574px) {
+    .card-body {
+        margin: 10px 20%;
+    }
+}
 
 @media only screen and (max-width: 767px) {
+    .card-text {
+        height: 0;
+    }
+    .card-title {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .facility:hover {
+        background: transparent;
+    }
     .navbar-nav {
         text-align: center;
     }
@@ -196,3 +218,16 @@ h1, h2, h3, h4, h5, h6, p, button {
     width: 100%;
 }
 
+.facilities {
+    margin-bottom: 20px;
+}
+.facility {
+    border: 0;
+    margin-bottom: 3rem;
+}
+.services h2,
+.video h2 {
+    text-align: center;
+    margin: 2rem 0 2rem 0;
+    font-weight: 600;
+}
