@@ -16,12 +16,12 @@ if(isset($_POST['submit'])){
 
    if(mysqli_num_rows($result) > 0){
 
-      $error[] = 'user already exist!';
+      $error[] = 'User already exist!';
 
    }else{
 
       if($pass != $cpass){
-         $error[] = 'password not matched!';
+         $error[] = 'Password not matched!';
       }else{
          $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES('$name','$email','$pass','$user_type')";
          mysqli_query($conn, $insert);
