@@ -1,57 +1,5 @@
-<?php
-include 'gallery_header.php';
-?>
-<!--Heading starts-->
-<h1 class="heading">
-    Events and Gallery
-</h1>
-<!--Heading ends-->
-
-
-<!--Filter bar starts-->
-<div class="filter-bar">
-    <div class="filter_nav">
-        <div class="filters">
-            <span class="item active" data-name="all">All</span>
-            <span class="item" data-name="premise">Premise</span>
-            <span class="item" data-name="spandan">Spandan</span>
-            <span class="item" data-name="hpl">HPL</span>
-            <span class="item" data-name="dj">DJ Night</span>
-            <span class="item" data-name="festival">Festival</span>
-        </div>
-    </div>
-    <!-- filter images-->
-    <div class="gallery">
-        <div class="image" data-name="dj"><span><img src="Hostel images/dj1.jpg" alt=""></span></div>
-        <div class="image" data-name="festival"><span><img src="Hostel images/festivals1.jpg" alt=""></span></div>
-        <div class="image" data-name="hpl"><span><img src="Hostel images/hpl1.jpg" alt=""></span></div>
-        <div class="image" data-name="spandan"><span><img src="Hostel images/spandan1.jpg" alt=""></span></div>
-        <div class="image" data-name="premise"><span><img src="Hostel images/premise1.jpg" alt=""></span></div>
-        <div class="image" data-name="premise"><span><img src="Hostel images/room1.jpg" alt=""></span></div>
-        <div class="image" data-name="hpl"><span><img src="Hostel images/hpl2.jpg" alt=""></span></div>
-        <div class="image" data-name="dj"><span><img src="Hostel images/sj2.jpg" alt=""></span></div>
-        <div class="image" data-name="premise"><span><img src="Hostel images/room2.jpg" alt=""></span></div>
-        <div class="image" data-name="premise"><span><img src="Hostel images/premise3.jpg" alt=""></span></div>
-        <div class="image" data-name="spandan"><span><img src="Hostel images/spandan3.jpg" alt=""></span></div>
-        <div class="image" data-name="spandan"><span><img src="Hostel images/spandan2.jpg" alt=""></span></div>
-        <div class="image" data-name="premise"><span><img src="Hostel images/premise2.jpg" alt=""></span></div>
-    </div>
-</div>
-<!--Filter bar ends-->
-
-<!-- full screen image preview -->
-<div class="preview-box">
-    <div class="details">
-        <span class="title">Image Catagory: <p>Not defined</p></span>
-        <span class="icon fas fa-times">x</span>
-    </div>
-    <div class="image-box">
-        <img src="Hostel images/hpl2.jpg" alt="">
-    </div>
-</div>
-<div class="shadow"></div>
-<script>
-    //selecting all required elements
+//Start of Gallery JS
+//selecting all required elements
     const filterItem = document.querySelector(".filters");
     const filterImg = document.querySelectorAll(".image");
 
@@ -61,7 +9,7 @@ include 'gallery_header.php';
                 filterItem.querySelector(".active").classList.remove("active"); //remove the active class which is the first element
                 selectedItem.target.classList.add("active");
                 let filterName = selectedItem.target.getAttribute("data-name"); //getting data-name value of the user selected item and storing n a filtername variable
-                console.log(filterName)
+                console.log(filterName);
                 filterImg.forEach((image) => {
                     let filterImages = image.getAttribute("data-name"); // getting image data-name value
                     //if user selected item data-name value is equal to image data-name value
@@ -75,11 +23,11 @@ include 'gallery_header.php';
                     }
                 });
             }
-        }
+        };
         for (let index = 0; index < filterImg.length; index++) {
             filterImg[index].setAttribute("onclick", "preview(this)"); // adding onclick attribute in all available image
         }
-    }
+    };
     //selecting all required elements
     const previewBox = document.querySelector(".preview-box"),
         previewImg = previewBox.querySelector("img"),
@@ -103,7 +51,5 @@ include 'gallery_header.php';
             document.querySelector("body").style.overflow = "scroll"; /// show the scroll feature
         }
     }
-</script>
-</body>
-
-</html>
+    
+    //End of Gallery JS

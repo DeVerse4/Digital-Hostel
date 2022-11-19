@@ -1,11 +1,11 @@
 
 var swiper = new Swiper(".mySwiper", {
     autoplay: {
-        delay: 2500,
+        delay: 2500
     },
     navigation: {
         prevEl: '#js-prev1',
-        nextEl: '#js-next1',
+        nextEl: '#js-next1'
     },
     effect: "coverflow",
     grabCursor: true,
@@ -16,9 +16,9 @@ var swiper = new Swiper(".mySwiper", {
         stretch: 0,
         depth: 0,
         modifier: 1,
-        slideShadows: true,
+        slideShadows: true
     },
-    loop: true,
+    loop: true
 });
 
 // Start of Tawk.to Script
@@ -35,3 +35,4 @@ var swiper = new Swiper(".mySwiper", {
 // })();
 
 // End of Tawk.to Script
+

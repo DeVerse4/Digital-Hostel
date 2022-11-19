@@ -1,14 +1,24 @@
-<?php include 'header.php'; ?>
+<?php
+    ob_start();
+    include("../header.php");
+    $buffer=ob_get_contents();
+    ob_end_clean();
 
-<div class="form-container mt-3">
+    $title = "Registration | Arya Bhatta Hostel";
+    $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+
+    echo $buffer;
+?>
+
+<div class="form-container" style='background: #f1f2f6'>
     <div class="container">
         <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="section-title">
+            <div class="page-title">
                 <h1 class="h1-responsive font-weight">Register</h1>
             </div>
         </div>
     </div>
-    <div class="form">
+    <div class="reg-form">
         <form class="form-signin" action="registrationAction.php" method="post">
             <div class="form-section ">
                 <div class="form-elements">
