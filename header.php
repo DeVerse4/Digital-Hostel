@@ -63,7 +63,9 @@
         <nav class="navbar navbar-inverse navbar-expand-lg fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">Arya Bhatta Hostel</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
                 </button>
 
@@ -79,65 +81,75 @@
                             <a class="nav-link" href="./Gallary/gallery.php">Gallery</a>
                         </li>
                         <?php if ($mode == "admin") { ?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="error.php">Attendance</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="error.php" role="button" data-toggle="dropdown" aria-expanded="false">
-                                    Admin
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="error.php">Generate Pass</a>
-                                    <a class="dropdown-item" href="error.php">Student details</a>
-                                    <a class="dropdown-item" href="error.php">Feedbacks</a>
-                                    <a class="dropdown-item" href="error.php">Complains</a>
-                                </div>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="error.php">Attendance</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="error.php" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                Admin
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="error.php">Generate Pass</a>
+                                <a class="dropdown-item" href="error.php">Student details</a>
+                                <a class="dropdown-item" href="error.php">Feedbacks</a>
+                                <a class="dropdown-item" href="error.php">Complains</a>
+                            </div>
+                        </li>
                         <?php } ?>
                         <?php if ($mode == "student") { ?>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="error.php" role="button" data-toggle="dropdown" aria-expanded="false">
-                                    Services
-                                </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="error.php">Generate Pass</a>
-                                    <a class="dropdown-item" href="error.php">Attendance</a>
-                                </div>
-                            </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="error.php" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="error.php">Generate Pass</a>
+                                <a class="dropdown-item" href="error.php">Attendance</a>
+                            </div>
+                        </li>
                         <?php } ?>
                         <?php if ($id == "") { ?>
-                            <li class="nav-item ">
-                                <a class="login btn btn-primary" data-toggle="modal" data-target="#loginModal">Login</a>
-                            </li>
+                        <li class="nav-item ">
+                            <a class="login btn btn-primary" data-toggle="modal" data-target="#loginModal">Login</a>
+                        </li>
                         <?php } else { ?>
-                            <li class="nav-item dropdown">
-                                <a class="nav-profile dropdown-toggle" href="error.php" role="button" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="images/default.png" height="40" width="40" style="border-radius: 30px; border: 1px solid black;" alt="User"></a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-profile dropdown-toggle" href="error.php" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                <img src="images/default.png" height="40" width="40"
+                                    style="border-radius: 30px; border: 1px solid black;" alt="User"></a>
 
-                                <div class="dropdown-menu dropdown-menu-right ">
-                                    <a class="dropdown-item">Hello, <?php echo $id;?></a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="error.php">Dashboard</a>
-                                    <!-- <li class="divider"></li> -->
-                                    <a class="dropdown-item" href="error.php">Update Profile</a>
-                                    <!-- <li class="divider"></li> -->
-                                    <a class="dropdown-item" href="error.php">Change Password</a>
-                                    <div class="dropdown-divider"></div>
-                                    <?php if ($mode != "admin") { ?>
-                                        <a class="dropdown-item" href="Feedback.php"><b>Feedback</b></a>
-                                        <!-- <li class="divider"></li> -->
-                                        <a class="dropdown-item" href="Complaints.php"><b>Complaints</b></a>
-                                        <!-- <li class="divider"></li> -->
-                                        <a class="dropdown-item" href="Contactus.php"><b>Contact us</b></a>
-                                        <div class="dropdown-divider"></div>
-                                    <?php } ?>
-                                    <a class="dropdown-item" href="logout.php"><b>Logout</b></a>
-                                </div>
+                            <div class="dropdown-menu dropdown-menu-right ">
+                                <a class="dropdown-item">Hello,
+                                    <?php echo $id; ?>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <?php if ($mode == "student") { ?>
+                                <a class="dropdown-item" href="student_dashboard.php">Profile</a>
+                                <?php } ?>
+                                <?php if ($mode == "admin") { ?>
+                                <a class="dropdown-item" href="admin_dashboard.php">Profile</a>
+                                <?php } ?>
+                                <a class="dropdown-item" href="error.php">Update Profile</a>
+                                <!-- <li class="divider"></li> -->
+                                <a class="dropdown-item" href="error.php">Change Password</a>
+                                <div class="dropdown-divider"></div>
+                                <?php if ($mode != "admin") { ?>
+                                <a class="dropdown-item" href="Feedback.php"><b>Feedback</b></a>
+                                <!-- <li class="divider"></li> -->
+                                <a class="dropdown-item" href="Complaints.php"><b>Complaints</b></a>
+                                <!-- <li class="divider"></li> -->
+                                <a class="dropdown-item" href="Contactus.php"><b>Contact us</b></a>
+                                <div class="dropdown-divider"></div>
+                                <?php } ?>
+                                <a class="dropdown-item" href="logout.php"><b>Logout</b></a>
+                            </div>
 
-                            </li>
+                        </li>
                 </div>
-            <?php } ?>
-            </ul>
+                <?php } ?>
+                </ul>
             </div>
             </div>
         </nav>

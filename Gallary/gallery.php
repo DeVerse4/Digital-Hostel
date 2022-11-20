@@ -1,12 +1,12 @@
 <?php
 include 'gallery_header.php';
+include '../header.php';
 ?>
 <!--Heading starts-->
 <h1 class="heading">
     Events and Gallery
 </h1>
 <!--Heading ends-->
-
 
 <!--Filter bar starts-->
 <div class="filter-bar">
