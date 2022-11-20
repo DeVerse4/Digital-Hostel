@@ -137,7 +137,6 @@
     </div>
 
 </section>
-<!-- services and facilities end -->
 
 <!-- Videos -->
 <section class="video-section">

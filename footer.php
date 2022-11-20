@@ -1,6 +1,6 @@
  <!-- Start footer -->
- <footer class="text-center text-lg-start bg-[#f1f2f6] text-muted font-weight-bold">
-     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+ <footer class="text-center text-lg-start text-muted font-weight-bold" style='background: #f1f2f6'>
+     <section class="d-flex justify-content-center justify-content-lg-between border-bottom">
          <div class="me-5 d-none d-lg-block">
          </div>
          <div>
@@ -19,7 +19,7 @@
          </div>
      </section>
      <section class="">
-         <div class="container text-center text-md-start mt-5">
+         <div class="container text-center text-md-start">
              <div class="row mt-3">
                  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                      <h6 class="text-uppercase font-weight-bold mb-4">
@@ -46,6 +46,9 @@
                      </p>
                      <p>
                          <a href="#!" class="text-reset">Complaints</a>
+                     </p>
+                     <p>
+                         <a href="#!" class="text-reset">Hostel Rules</a>
                      </p>
                  </div>
                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-left">
@@ -81,7 +84,7 @@
  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
  <!--Custom JS-->
- <script src="Scripts/script.js"></script>
+ <script src="/Digital-Hostel/Scripts/script.js"></script>
 
  </body>
 

@@ -25,12 +25,8 @@
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-        <!-- External JS  -->
-        <script src="DgitalHostel\script.js"></script>
-
-        <link rel="stylesheet" href="Registration/regFormStyle.css">
-        <link rel="stylesheet" href="Styles/style.css">
-
+        <!--<link rel="stylesheet" href="/Digital-Hostel/Registration/regFormStyle.css">-->
+        <link rel="stylesheet" href="/Digital-Hostel/Styles/style.css">
 
 
         <title>Arya Bhatta Hostel</title>
@@ -72,13 +68,36 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mb-lg-o">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home</a>
+                            <a class="nav-link" href="/Digital-Hostel/index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="error.php">About</a>
+                            <a class="nav-link" href="/Digital-Hostel/error.php">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./Gallary/gallery.php">Gallery</a>
+                            <a class="nav-link" href="/Digital-Hostel/Gallery/gallery.php">Gallery</a>
+                        </li>
+                        <?php if ($mode == "admin") { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Digital-Hostel/error.php">Attendance</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/Digital-Hostel/error.php" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                Admin
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/Digital-Hostel/error.php">Generate Pass</a>
+                                <a class="dropdown-item" href="/Digital-Hostel/error.php">Student details</a>
+                                <a class="dropdown-item" href="/Digital-Hostel/error.php">Add Notice</a>
+                                <a class="dropdown-item" href="/Digital-Hostel/error.php">Feedbacks</a>
+                                <a class="dropdown-item"
+                                    href="/Digital-Hostel/Complaint/complaintReport.php">Complains</a>
+                            </div>
+                        </li>
+                        <?php } ?>
+                        <?php if ($mode == "student") { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Digital-Hostel/error.php">Notices</a>
                         </li>
                         <?php if ($mode == "admin") { ?>
                         <li class="nav-item">
@@ -122,15 +141,11 @@
 
                             <div class="dropdown-menu dropdown-menu-right ">
                                 <a class="dropdown-item">Hello,
-                                    <?php echo $id; ?>
+                                    <?php echo $id;?>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <?php if ($mode == "student") { ?>
-                                <a class="dropdown-item" href="student_dashboard.php">Profile</a>
-                                <?php } ?>
-                                <?php if ($mode == "admin") { ?>
-                                <a class="dropdown-item" href="admin_dashboard.php">Profile</a>
-                                <?php } ?>
+                                <a class="dropdown-item" href="error.php">Dashboard</a>
+                                <!-- <li class="divider"></li> -->
                                 <a class="dropdown-item" href="error.php">Update Profile</a>
                                 <!-- <li class="divider"></li> -->
                                 <a class="dropdown-item" href="error.php">Change Password</a>
@@ -153,3 +168,5 @@
             </div>
             </div>
         </nav>
+        <!-- End of Navbar -->
+        

@@ -8,7 +8,7 @@
                      <span aria-hidden="true">&times;</span>
                  </button>
              </div>
-             <form action="ValidateAction.php" role="form" method="post" class="px-4 py-3">
+             <form action="/Digital-Hostel/ValidateAction.php" role="form" method="post" class="px-4 py-3">
                  <div class="modal-body">
                      <div class="form-group">
                          <label for="exampleDropdownFormEmail1">College ID</label>
@@ -27,7 +27,7 @@
                          </div>
                      </div>
                      <div class="dropdown-divider"></div>
-                     <a class="dropdown-item" href="Registration/registration.php" class="login btn btn-primary">New around here?
+                     <a class="dropdown-item" href="/Digital-Hostel/Registration/registration.php" class="login btn btn-primary">New around here?
                          Sign up</a>
                      <a class="dropdown-item" href="#">Forgot password?</a>
                  </div>

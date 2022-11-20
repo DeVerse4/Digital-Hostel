@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2022 at 10:39 PM
+-- Generation Time: Nov 19, 2022 at 11:01 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,6 +20,36 @@ SET time_zone = "+00:00";
 --
 -- Database: `digital_hostel`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblcomplaint`
+--
+
+CREATE TABLE `tblcomplaint` (
+  `sno` int(10) NOT NULL,
+  `collegeid` varchar(10) NOT NULL,
+  `subject` varchar(20) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `lastmodified` datetime NOT NULL,
+  `complaint_status` varchar(50) NOT NULL DEFAULT 'PENDING',
+  `resolvemessage` varchar(255) NOT NULL,
+  `resolve_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tblcomplaint`
+--
+
+INSERT INTO `tblcomplaint` (`sno`, `collegeid`, `subject`, `message`, `lastmodified`, `complaint_status`, `resolvemessage`, `resolve_date`) VALUES
+(5, '0205cse213', 'Pani', 'Water supply line not working', '2022-11-20 02:58:32', 'RESOLVED', 'moot piyega', '2022-11-20 03:04:17'),
+(6, '0205cse213', 'Food', 'Messs food is very bad', '2022-11-20 02:58:32', 'RESOLVED', '5 star me aaye ho', '2022-11-20 03:05:01'),
+(7, '0205cse213', 'girl', 'Why girls are not allowed in hosstel??', '2022-11-20 02:58:32', 'RESOLVED', 'teri pen di', '2022-11-20 03:05:16'),
+(9, '0205cse213', 'room', 'Broken wall of my room plz repair it', '2022-11-20 02:58:32', 'PENDING', '', '0000-00-00 00:00:00'),
+(10, '0205cse213', 'furniture', 'I have only one table in my room', '2022-11-20 02:58:32', 'PENDING', '', '0000-00-00 00:00:00'),
+(11, '0205cse213', 'electricity', 'Eletricity is not properly reach on 2nd floor sr. wing', '2022-11-20 02:58:32', 'PENDING', '', '0000-00-00 00:00:00'),
+(12, '0205cse213', 'roommate', 'sir, what is the procedure for changing the room', '2022-11-20 02:58:32', 'PENDING', '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -53,7 +83,7 @@ CREATE TABLE `tbllogin` (
 --
 
 INSERT INTO `tbllogin` (`collegeid`, `pass`, `wmode`, `lastmodified`) VALUES
-('0205cse045', '456', '', '2022-11-18 01:48:03'),
+('0205cse045', '456', 'student', '2022-11-18 01:48:03'),
 ('0205cse213', '123', 'student', '2022-11-17 23:54:24'),
 ('1234war123', '789', 'admin', '2022-11-18 01:44:01');
 
@@ -98,6 +128,12 @@ INSERT INTO `tblregistration` (`collegeid`, `name`, `dob`, `mobile`, `mailid`, `
 --
 
 --
+-- Indexes for table `tblcomplaint`
+--
+ALTER TABLE `tblcomplaint`
+  ADD PRIMARY KEY (`sno`);
+
+--
 -- Indexes for table `tblgallery`
 --
 ALTER TABLE `tblgallery`
@@ -112,6 +148,12 @@ ALTER TABLE `tbllogin`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `tblcomplaint`
+--
+ALTER TABLE `tblcomplaint`
+  MODIFY `sno` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tblgallery`

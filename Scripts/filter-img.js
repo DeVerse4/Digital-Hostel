@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Gallary/gallery.php
 <?php
 include 'gallery_header.php';
 include '../header.php';
@@ -52,6 +53,10 @@ include '../header.php';
 <div class="shadow"></div>
 <script>
     //selecting all required elements
+=======
+//Start of Gallery JS
+//selecting all required elements
+>>>>>>> faaca54efdba986ceb011be03876b4998c963665:Scripts/filter-img.js
     const filterItem = document.querySelector(".filters");
     const filterImg = document.querySelectorAll(".image");
 
@@ -61,7 +66,7 @@ include '../header.php';
                 filterItem.querySelector(".active").classList.remove("active"); //remove the active class which is the first element
                 selectedItem.target.classList.add("active");
                 let filterName = selectedItem.target.getAttribute("data-name"); //getting data-name value of the user selected item and storing n a filtername variable
-                console.log(filterName)
+                console.log(filterName);
                 filterImg.forEach((image) => {
                     let filterImages = image.getAttribute("data-name"); // getting image data-name value
                     //if user selected item data-name value is equal to image data-name value
@@ -75,11 +80,11 @@ include '../header.php';
                     }
                 });
             }
-        }
+        };
         for (let index = 0; index < filterImg.length; index++) {
             filterImg[index].setAttribute("onclick", "preview(this)"); // adding onclick attribute in all available image
         }
-    }
+    };
     //selecting all required elements
     const previewBox = document.querySelector(".preview-box"),
         previewImg = previewBox.querySelector("img"),
@@ -103,7 +108,5 @@ include '../header.php';
             document.querySelector("body").style.overflow = "scroll"; /// show the scroll feature
         }
     }
-</script>
-</body>
-
-</html>
+    
+    //End of Gallery JS
