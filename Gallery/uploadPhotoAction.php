@@ -1,10 +1,12 @@
 <?php
 
 session_start();
-$collegeid = $_SESSION["id"];
-$photo = $_REQUEST["photo"];
-$photoTag = $_REQUEST["photo_tag"];
 include "../admin.php";
-$x = uploadPhoto($collegeid, $photo, $photoTag);
+$collegeid = $_SESSION["id"];
+$photoTag = $_REQUEST["photo_tag"];
+$photo = $_FILES["photo"]["tmp_name"];
+$data = file_get_contents($photo);
+$data = addslashes($data);
+$x = uploadPhoto($collegeid, $data, $photoTag);
 header("location:gallery.php?g=0");
 ?>

@@ -60,3 +60,13 @@ function uploadPhoto($collegeid, $photo, $photoTag) {
     $x = mysqli_query($dsn, "INSERT INTO `tblgallery`(`collegeid`, `photo`, `phototag`, `upload_date`) VALUES ('$collegeid','$photo','$photoTag',now())");
     return $x;
 }
+function fetchPhoto($n) {
+    $dsn = connect();
+    $x = mysqli_query($dsn, "SELECT `photo` FROM tblgallery WHERE `s.No`=$n");
+    return $x;
+}
+function showPhoto() {
+    $dsn = connect();
+    $x = mysqli_query($dsn, "SELECT `s.No`,`phototag` FROM `tblgallery` ORDER BY 1");
+    return $x;
+}

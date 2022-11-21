@@ -122,9 +122,7 @@
                             <div class="dropdown-menu dropdown-menu-right ">
                                 <a class="dropdown-item">Hello, <?php echo $id; ?></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/Digital-Hostel/error.php">Dashboard</a>
-                                <!-- <li class="divider"></li> -->
-                                <a class="dropdown-item" href="/Digital-Hostel/error.php">Update Profile</a>
+                                <a class="dropdown-item" href="/Digital-Hostel/student_dashboard.php">Dashboard</a>
                                 <!-- <li class="divider"></li> -->
                                 <a class="dropdown-item" href="/Digital-Hostel/error.php">Change Password</a>
                                 <div class="dropdown-divider"></div>
