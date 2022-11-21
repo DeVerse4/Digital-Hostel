@@ -1,0 +1,75 @@
+* {
+	color: black;
+}
+
+html, body {
+	height: 100%;
+}
+
+#navbar li a {
+	color: #eee;
+}
+
+#navbar li:hover a {
+	color: #fff;
+	text-decoration: underline; 
+}
+
+.page-container {
+	padding-top: 45px;
+}
+
+.wrapper {
+    margin: auto;
+}
+
+.footer-container {
+	position: relative;
+    left: 0;
+    bottom: 0;
+    font-size: 12px;
+    width: 100%;
+    margin: auto;
+    background-color: #001ed3;
+}
+
+header {
+	box-shadow: 0px 5px 5px #6c757d36;
+	position: fixed;
+	z-index: 99;
+	top: 0;
+}
+
+.apply-button {
+	background-color: #001ed3;
+	color: #333;
+	border-radius: 1px;
+}
+.apply-button:hover {
+	background-color: #ffc107;
+}
+
+.event {
+	box-shadow: 5px -5px 10px 0px #dae0e5;
+}
+
+.card-body {
+	border-top: 1px solid #ddd;
+}
+
+.card-title, .description {
+	font-weight: 600;
+	font-size: 1.5rem;
+}
+
+.description {
+	margin: 0;
+}
+
+.category {
+	text-decoration: underline;
+}
+
+.btn-checkout span, .btn-checkout .fa-remove{
+	color: white
+}
