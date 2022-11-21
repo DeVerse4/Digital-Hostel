@@ -61,6 +61,10 @@
     if (isset($_GET["s"]))
         echo '<script> alert("Complaint successfully registered...."); </script>';
     ?> 
+    <?php
+    if (isset($_GET["c"]))
+        echo '<script> alert("Message sent successfully..."); </script>';
+    ?> 
     <nav class="navbar navbar-inverse navbar-expand-lg sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="/Digital-Hostel/index.php">Arya Bhatta Hostel</a>

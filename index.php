@@ -366,7 +366,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12- col xs-12">
                 <div class="contact-form">
-                    <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                    <form id="contact-form" name="contact-form" action="contactAction.php" method="POST">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
@@ -398,7 +398,7 @@
                             </div>
                         </div>
                         <div class="text-center text-md-left">
-                            <a class="btn btn-primary">Send</a>
+                            <input type="submit" class="btn btn-primary" value="Send">
                         </div>
                     </form>
                 </div>

@@ -60,3 +60,9 @@ function uploadPhoto($collegeid, $photo, $photoTag) {
     $x = mysqli_query($dsn, "INSERT INTO `tblgallery`(`collegeid`, `photo`, `phototag`, `upload_date`) VALUES ('$collegeid','$photo','$photoTag',now())");
     return $x;
 }
+
+function addMessage($name, $email, $subject, $message) {
+    $dsn = connect();
+    $x = mysqli_query($dsn, "INSERT INTO `tblcontact`(`name`, `email`, `subject`, `message`, `contact_datetime`) VALUES('$name','$email','$subject','$message',now())");
+    return $x;
+}
