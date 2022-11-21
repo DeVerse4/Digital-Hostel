@@ -45,7 +45,6 @@
             <div class="links">
                 <a class="link" role="button" href="#loginModal" data-toggle="modal" data-target="#loginModal">Already
                     Registered? Click here.</a>
-                <a class="link" href="#">Forgot password?</a>
             </div>
             <button class="btn btn-md btn-block" type="submit">Register</button>
         </form>

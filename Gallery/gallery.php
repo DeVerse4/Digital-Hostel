@@ -18,71 +18,196 @@ echo $buffer;
             </div>
         </div>
     </div>
-    <!--Heading ends-->
-
-
+    <!--Heading ends-->    
+    <?php
+    if ($id == "") {
+        echo '';
+    } else {
+        $collegeid = $_SESSION["id"];
+        echo '
+            <div class="container mb-5 uploadForm" id="uploadForm">
+            <div class="row col-md-12">
+                <div class="col-md-3 col-sm-2 col-xm-2">
+                </div>
+                <div class="col-md-6 col-sm-8 col-xm-8">
+                    <h3 class="text-center h3-responsive"></h3>
+                    <form action="uploadPhotoAction.php" method="post" enctype="multipart/form-data">
+                        <div class="form-section" id="updForm">
+                            <div class="form-elements">
+                                <label for="tag" class="input-label">Picture tag</label>
+                                <select class="form-select form-select-lg" name="photo_tag"
+                                    aria-label="Default select example">
+                                    <option selected>Select a tag</option>
+                                    <option value="dj">DJ Night</option>
+                                    <option value="festival">Festival</option>
+                                    <option value="hpl">HPL</option>
+                                    <option value="spandan">Spandan</option>
+                                    <option value="premise">Premise</option>
+                                </select>
+                            </div>
+                            <div class="form-elements uploadFile">
+                                <label for="photo" class="input-label">Upload: </label>
+                                <input type="file" id="galleryPhoto" name="photo" class="" autofocus>
+                            </div>
+                        </div>
+                        <div class="form-elements btns">
+                            <button name="cancel" class="btn btn-md btn-outline-danger cancelBtn">Cancel</button>
+                            <button class="btn btn-md btn-primary" id="uploadBtn" type="submit">Upload a
+                                Picture</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3 col-sm-2 col-xm-2">
+                </div>
+            </div>
+        </div>';
+    }
+    ?>
     <!--Filter bar starts-->
-    <div class="filter-bar">
-
-        <div class="filter_nav">
-            <ul class="filters nav justify-content-center ">
-                <li class="nav-item ml-1 mb-3">
-                    <span class="item active" data-name="all">All</span>
-                </li>
-                <li class="nav-item ml-1 mb-3">
-                    <span class="item" data-name="premise">Premise</span>
-                </li>
-                <li class="nav-item ml-1 mb-3">
-                    <span class="item" data-name="spandan">Spandan</span>
-                </li>
-                <li class="nav-item ml-1 mb-3">
-                    <span class="item" data-name="hpl">HPL</span>
-                </li>
-                <li class="nav-item ml-1 mb-3">
-                    <span class="item" data-name="dj">DJ Night</span>
-                </li>
-                <li class="nav-item ml-1 mb-3">
-                    <span class="item" data-name="festival">Festival</span>
-                </li>
-            </ul>
-        </div>
-        <!--        <div class="filter_nav">
-                    <div class="filters">
-                    </div>
-                </div>-->
-        <!-- filter images-->
-        <div class="gallery">
-            <div class="image" data-name="dj"><span><img src="Hostel images/dj1.jpg" alt=""></span></div>
-            <div class="image" data-name="festival"><span><img src="Hostel images/festivals1.jpg" alt=""></span></div>
-            <div class="image" data-name="hpl"><span><img src="Hostel images/hpl1.jpg" alt=""></span></div>
-            <div class="image" data-name="spandan"><span><img src="Hostel images/spandan1.jpg" alt=""></span></div>
-            <div class="image" data-name="premise"><span><img src="Hostel images/premise1.jpg" alt=""></span></div>
-            <div class="image" data-name="premise"><span><img src="Hostel images/room1.jpg" alt=""></span></div>
-            <div class="image" data-name="hpl"><span><img src="Hostel images/hpl2.jpg" alt=""></span></div>
-            <div class="image" data-name="dj"><span><img src="Hostel images/sj2.jpg" alt=""></span></div>
-            <div class="image" data-name="premise"><span><img src="Hostel images/room2.jpg" alt=""></span></div>
-            <div class="image" data-name="premise"><span><img src="Hostel images/premise3.jpg" alt=""></span></div>
-            <div class="image" data-name="spandan"><span><img src="Hostel images/spandan3.jpg" alt=""></span></div>
-            <div class="image" data-name="spandan"><span><img src="Hostel images/spandan2.jpg" alt=""></span></div>
-            <div class="image" data-name="premise"><span><img src="Hostel images/premise2.jpg" alt=""></span></div>
-        </div>
+    <?php
+    if ($id == "") {
+        echo '<div class="filter-bar">'
+        . '<div class="container filter_nav">';
+    } else {
+        $collegeid = $_SESSION["id"];
+        echo '<div class="container-fluid filter-bar">'
+        . '<div class="container filter_nav d-flex justify-content-between align-items-center">';
+    }
+    ?>
+    <div>
+        <ul class="filters nav justify-content-center ">
+            <li class="nav-item ml-1 pb-3">
+                <span class="item active" data-name="all">All</span>
+            </li>
+            <li class="nav-item ml-1 pb-3">
+                <span class="item" data-name="premise">Premise</span>
+            </li>
+            <li class="nav-item ml-1 pb-3">
+                <span class="item" data-name="spandan">Spandan</span>
+            </li>
+            <li class="nav-item ml-1 pb-3">
+                <span class="item" data-name="hpl">HPL</span>
+            </li>
+            <li class="nav-item ml-1 pb-3">
+                <span class="item" data-name="dj">DJ Night</span>
+            </li>
+            <li class="nav-item ml-1 pb-3">
+                <span class="item" data-name="festival">Festival</span>
+            </li>
+        </ul>
     </div>
-    <!--Filter bar ends-->
+    <?php
+    if ($id == "") {
+        echo '';
+    } else {
+        $collegeid = $_SESSION["id"];
+        echo '<div class="uploadBtn nav-item ml-1 mb-3">
+                <button class="item">Upload Photo</button>
+            </div>';
+    }
+    ?>
 
-    <!-- full screen image preview -->
-    <div class="preview-box">
-        <div class="details">
-            <span class="title">Image Catagory: <p>Not defined</p></span>
-            <span class="icon fas fa-times"></span>
-        </div>
-        <div class="image-box">
-            <img src="Hostel images/hpl2.jpg" alt="">
-        </div>
+</div>
+<!--        <div class="filter_nav">
+            <div class="filters">
+            </div>
+        </div>-->
+<!-- filter images-->
+<div class="gallery">
+    <div class="image" data-name="dj">
+        <span class="d-flex flex-column justify-content-between border-primary">
+            <img src="Hostel images/dj1.jpg" alt="">
+            <?php
+            if ($id == "") {
+                echo '';
+            } else {
+                $collegeid = $_SESSION["id"];
+                echo" <div class='d-flex flex-row justify-content-between p-2'>
+                        <i class='fa-regular fa-pen-to-square'></i>
+                        <i class='fa-solid fa-trash'></i>
+                    </div>";
+            }
+            ?>
+        </span>
     </div>
-    <div class="shadow"></div>
+    <div class="image" data-name="festival">
+        <span class="d-flex flex-column justify-content-between"><img src="Hostel images/festivals1.jpg" alt="">
+            <?php
+            if ($id == "") {
+                echo '';
+            } else {
+                $collegeid = $_SESSION["id"];
+                echo" <div class='d-flex flex-row justify-content-between p-2'>
+                        <i class='fa-regular fa-pen-to-square'></i>
+                        <i class='fa-solid fa-trash'></i>
+                    </div>";
+            }
+            ?>
+        </span>
+    </div>
+    <div class="image" data-name="hpl">
+        <span class="d-flex flex-column justify-content-between"><img src="Hostel images/hpl1.jpg" alt="">
+            <?php
+            if ($id == "") {
+                echo '';
+            } else {
+                $collegeid = $_SESSION["id"];
+                echo" <div class='d-flex flex-row justify-content-between p-2'>
+                        <i class='fa-regular fa-pen-to-square'></i>
+                        <i class='fa-solid fa-trash'></i>
+                    </div>";
+            }
+            ?>
+        </span>
+    </div>
+    <div class="image" data-name="spandan">
+        <span class="d-flex flex-column justify-content-between"><img src="Hostel images/spandan1.jpg" alt="">
+            <?php
+            if ($id == "") {
+                echo '';
+            } else {
+                $collegeid = $_SESSION["id"];
+                echo" <div class='d-flex flex-row justify-content-between p-2'>
+                        <i class='fa-regular fa-pen-to-square'></i>
+                        <i class='fa-solid fa-trash'></i>
+                    </div>";
+            }
+            ?>
+        </span>
+    </div>
+</div>
+</div>
+<!--Filter bar ends-->
+
+<!-- full screen image preview -->
+<div class="preview-box">
+    <div class="details">
+        <span class="title">Image Catagory: <p>Not defined</p></span>
+        <span class="icon fas fa-times"></span>
+    </div>
+    <div class="image-box">
+        <img src="Hostel images/hpl2.jpg" alt="">
+    </div>
+</div>
+<div class="shadow"></div>
 </div>
 
 <?php
 include '../footer.php';
 ?>
 <script src="/Digital-Hostel/Scripts/filter-img.js"></script>
+<script src="/Digital-Hostel/Scripts/script.js"></script>
+<script>
+    const uploadBtn = document.querySelector('.uploadBtn');
+    const cancelBtn = document.querySelector('.cancelBtn');
+    const uploadForm = document.querySelector('#uploadForm');
+    uploadBtn.addEventListener('click', () => {
+        uploadForm.style.display = 'block';
+        uploadForm.style.pointerEvents = 'auto';
+    });
+    cancelBtn.addEventListener('click', () => {
+        uploadForm.style.display = 'none';
+        uploadForm.style.pointerEvents = 'none';
+    });
+</script>
+

@@ -10,11 +10,11 @@ html {
 }
 
 :root {
-    --blue: rgb(39, 24, 126);
-    --navy: rgb(119, 142, 253);
-    --grey: rgb(174, 184, 254);
+    --blue: #27187e;
+    --navy: #778efd;
+    --grey: #aeb8fe;
     --white: #f1f2f6;
-    --orange: rgb(255, 134, 0);
+    --orange: #ff8600;
 }
 
 body {
@@ -444,16 +444,29 @@ body {
 
 /* Gallery CSS */
 
-
 .filter_nav .filters .item {
     padding: 7px 25px;
     font-size: 18px;
     font-weight: 600;
     color: var(--orange);
     border: 2px solid var(--orange);
-    border-radius: 50px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+.uploadBtn .item {
+    padding: 4px 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--blue);
+    border: 2px solid var(--blue);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.uploadBtn .item:hover {
+    color: var(--white);
+    background: var(--blue);
 }
 
 .filter_nav .filters .active,
@@ -599,7 +612,8 @@ body {
         justify-content: center;
     }
 
-    nav .filters .item {
+    nav .filters .item,
+    .uploadBtn .item{
         margin: 5px;
     }
 
@@ -735,95 +749,51 @@ body {
     }
 }
 
-/* Complaint Form */
-
-/*.complaint-form {
-    text-align: left;
-    padding-top: 1px;
-    padding-bottom: 2rem;
-    background: rgba(32, 61, 81, 0.9);
-    width: 760px;
-    margin: 10px auto 10px auto;
-    font-size: 2rem;
-    color: #f1f0ef;
-    font-family: 'Roboto', sans-serif;
+/* upload photo Form */
+.uploadForm form {
+    border: 1px solid #888;
+    border-radius: 10px;
+    padding: 1rem;
+}
+.uploadForm .form-select {
+    width: 100%;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    padding: 10px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-.complaint-form .form-name {
-    font-size: 2rem;
-     padding: 10px; 
+.uploadForm input [type="file"] {
+    display: none;
+    outline: none;
 }
-.complaint-form .form-item {
-    margin: 4rem auto 2rem 3rem;
-}
-.complaint-form .text-box {
-    width: 690px;
-    margin-top: .5rem;
-    height: 4rem;
-    border: none;
-    border-radius: 5px;
-    background-color: white;
-    display: block;
-}
-.complaint-form .comp-option{
-    display: inline-block;
-    margin-right: 2px;
-    min-width: 2rem;
-    min-width: 2rem;
-    font-size: 1.5rem;
-}
-.complaint-form label {
+
+.uploadForm .uploadFile {
     display: flex;
-    margin: 5px auto 2px auto;
-    height: auto;
-}
-.complaint-form .text-box  {
-    padding-left: 5px;
-    min-height: 10rem;
-    width: 690px;
-    max-width: 690px;
-    border-radius: 5px;
-    font-size: 1.7rem;
-    font-family: inherit;
-    font-style: inherit;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
 
-.complaint-form input,
-.complaint-form select {
-    padding-left: 5px;
-    font-size: 1.7rem;
-    font-family: inherit;
-    font-style: inherit;
-}
-.complaint-form .btn {
-    width: 690px;
-    height: 4rem;
-    padding: 0 auto 2rem auto;
-    background-color: #2b626a;
-    font-size: 1.7rem;
-    font-family: inherit;
-    border-radius: 2px;
-    border: none;
-    color: #f1f0ef;
+.uploadForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    z-index: 99;
 }
 
-.complaint-form .btn:hover{
-    background-color: var(--main-orange);
-    transition: background-color 400ms ease-out;
- } 
- @media(width: 760px){
-    #form{
-        width: 700px;
-    }
-    .text-box{
-        width: 690px;
-    }
-    #complaint{
-        width: 690px;
-        max-width: 690px;
-    }
-    #submit{
-        width: 690px;
-    }
-} */
+#uploadForm {
+    
+    display: none;
+    pointer-events: none;
+}
+
+.uploadForm .btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 10px;
+    width: 100%;
+}

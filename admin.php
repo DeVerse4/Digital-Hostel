@@ -55,3 +55,8 @@ function updComplaint($sno, $rmsg) {
     $x = mysqli_query($dsn, "update tblcomplaint set complaint_status='RESOLVED', resolvemessage='$rmsg', resolve_date=now() where sno = $sno");
     return $x;
 }
+function uploadPhoto($collegeid, $photo, $photoTag) {
+    $dsn = connect();
+    $x = mysqli_query($dsn, "INSERT INTO `tblgallery`(`collegeid`, `photo`, `phototag`, `upload_date`) VALUES ('$collegeid','$photo','$photoTag',now())");
+    return $x;
+}
