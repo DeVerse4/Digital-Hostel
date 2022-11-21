@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2022 at 11:01 PM
+-- Generation Time: Nov 21, 2022 at 08:40 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -43,13 +43,35 @@ CREATE TABLE `tblcomplaint` (
 --
 
 INSERT INTO `tblcomplaint` (`sno`, `collegeid`, `subject`, `message`, `lastmodified`, `complaint_status`, `resolvemessage`, `resolve_date`) VALUES
-(5, '0205cse213', 'Pani', 'Water supply line not working', '2022-11-20 02:58:32', 'RESOLVED', 'moot piyega', '2022-11-20 03:04:17'),
+(5, '0205cse213', 'Pani', 'Water supply line not working', '2022-11-20 02:58:32', 'RESOLVED', 'ok', '2022-11-21 21:46:00'),
 (6, '0205cse213', 'Food', 'Messs food is very bad', '2022-11-20 02:58:32', 'RESOLVED', '5 star me aaye ho', '2022-11-20 03:05:01'),
-(7, '0205cse213', 'girl', 'Why girls are not allowed in hosstel??', '2022-11-20 02:58:32', 'RESOLVED', 'teri pen di', '2022-11-20 03:05:16'),
+(7, '0205cse213', 'girl', 'Why girls are not allowed in hosstel??', '2022-11-20 02:58:32', 'RESOLVED', 'ok', '2022-11-21 21:46:09'),
 (9, '0205cse213', 'room', 'Broken wall of my room plz repair it', '2022-11-20 02:58:32', 'PENDING', '', '0000-00-00 00:00:00'),
 (10, '0205cse213', 'furniture', 'I have only one table in my room', '2022-11-20 02:58:32', 'PENDING', '', '0000-00-00 00:00:00'),
 (11, '0205cse213', 'electricity', 'Eletricity is not properly reach on 2nd floor sr. wing', '2022-11-20 02:58:32', 'PENDING', '', '0000-00-00 00:00:00'),
-(12, '0205cse213', 'roommate', 'sir, what is the procedure for changing the room', '2022-11-20 02:58:32', 'PENDING', '', '0000-00-00 00:00:00');
+(12, '0205cse213', 'roommate', 'sir, what is the procedure for changing the room', '2022-11-20 02:58:32', 'RESOLVED', 'ok', '2022-11-21 21:46:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblcontact`
+--
+
+CREATE TABLE `tblcontact` (
+  `sno` int(10) NOT NULL,
+  `name` varchar(40) DEFAULT NULL,
+  `email` varchar(30) DEFAULT NULL,
+  `subject` varchar(100) DEFAULT NULL,
+  `message` varchar(500) DEFAULT NULL,
+  `contact_datetime` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tblcontact`
+--
+
+INSERT INTO `tblcontact` (`sno`, `name`, `email`, `subject`, `message`, `contact_datetime`) VALUES
+(5, 'Gyan prakash', 'gyan@gyan.com', 'Mujhe ghr jana h', 'Ye kaha phansa diye jiii', '2022-11-22 00:19:29');
 
 -- --------------------------------------------------------
 
@@ -64,6 +86,14 @@ CREATE TABLE `tblgallery` (
   `phototag` varchar(100) NOT NULL,
   `upload_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tblgallery`
+--
+
+INSERT INTO `tblgallery` (`s.No`, `collegeid`, `photo`, `phototag`, `upload_date`) VALUES
+(1, '0205cse213', '', 'Select a tag', '2022-11-21 20:28:36'),
+(2, '0205cse213', '', 'Select a tag', '2022-11-21 21:39:58');
 
 -- --------------------------------------------------------
 
@@ -134,6 +164,12 @@ ALTER TABLE `tblcomplaint`
   ADD PRIMARY KEY (`sno`);
 
 --
+-- Indexes for table `tblcontact`
+--
+ALTER TABLE `tblcontact`
+  ADD PRIMARY KEY (`sno`);
+
+--
 -- Indexes for table `tblgallery`
 --
 ALTER TABLE `tblgallery`
@@ -156,10 +192,16 @@ ALTER TABLE `tblcomplaint`
   MODIFY `sno` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT for table `tblcontact`
+--
+ALTER TABLE `tblcontact`
+  MODIFY `sno` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `tblgallery`
 --
 ALTER TABLE `tblgallery`
-  MODIFY `s.No` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `s.No` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
