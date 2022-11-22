@@ -60,3 +60,23 @@ function uploadPhoto($collegeid, $photo, $photoTag) {
     $x = mysqli_query($dsn, "INSERT INTO `tblgallery`(`collegeid`, `photo`, `phototag`, `upload_date`) VALUES ('$collegeid','$photo','$photoTag',now())");
     return $x;
 }
+function fetchPhoto($n) {
+    $dsn = connect();
+    $x = mysqli_query($dsn, "SELECT `photo`, `phototag` FROM `tblgallery` WHERE `s.No` = $n");
+    return $x;
+}
+function showPhoto(){
+    $dsn = connect();
+    $x = mysqli_query($dsn, "SELECT * FROM `tblgallery`");
+    return $x;
+}
+function deletePhoto($sno) {
+    $dsn = connect();
+    $x = mysqli_query($dsn, "DELETE FROM `tblgallery` WHERE `s.No` = $sno");
+    return $x;
+}
+function addMessage($name, $email, $subject, $message) {
+    $dsn = connect();
+    $x = mysqli_query($dsn, "INSERT INTO `tblcontact`(`name`, `email`, `subject`, `message`, `lastmodified`) VALUES ('$name','$email','$subject','$message',now())");
+    return $x;
+}

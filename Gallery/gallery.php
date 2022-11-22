@@ -116,7 +116,7 @@ echo $buffer;
     for ($i = 0; $i < mysqli_num_rows($x); $i++) {
         $rs = mysqli_fetch_row($x);
     ?>
-    <div class="image" data-name=<?php echo "$rs[1]"; ?>>
+    <div class="image" data-name=<?php echo "$rs[3]"; ?>>
         <span class="d-flex flex-column justify-content-between border-primary">
             <img src=<?php echo "fetchPhoto.php?n=$rs[0]"; ?> alt="">
             <!-- <?php
