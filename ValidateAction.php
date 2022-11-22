@@ -1,15 +1,22 @@
 <?php
 
-    include_once 'admin.php';
+include_once 'admin.php';
 $collegeid = $_REQUEST["collegeid"];
 $pass = $_REQUEST["pass"];
 $x = checkId($collegeid, $pass);
 $rs = mysqli_fetch_row($x);
 if (isset($rs[0])) {
-    session_start();
-    $_SESSION["id"] = $collegeid;
-    $_SESSION["mode"] = $rs[0];
-    header("location:index.php?s=1");
+    $verification_code = isVerified($collegeid);
+    $vs = mysqli_fetch_row($verification_code);
+    $email = $vs[1];
+    if ($vs[0] != 'verified') {
+        header("location:Registration/email.php?email=$email");
+    } else {
+        session_start();
+        $_SESSION["id"] = $collegeid;
+        $_SESSION["mode"] = $rs[0];
+    header("location:index.php?login=1");
+    }
 } else {
     header("location:index.php?k=1");
 }
