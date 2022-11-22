@@ -77,6 +77,6 @@ function deletePhoto($sno) {
 }
 function addMessage($name, $email, $subject, $message) {
     $dsn = connect();
-    $x = mysqli_query($dsn, "INSERT INTO `tblcontact`(`name`, `email`, `subject`, `message`, `lastmodified`) VALUES ('$name','$email','$subject','$message',now())");
+    $x = mysqli_query($dsn, "INSERT INTO `tblcontact`(`name`, `email`, `subject`, `message`, `contact_datetime`) VALUES ('$name','$email','$subject','$message',now())");
     return $x;
 }
