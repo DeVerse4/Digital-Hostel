@@ -62,8 +62,16 @@
         echo '<script> alert("Complaint successfully registered...."); </script>';
     ?> 
     <?php
+    if (isset($_GET["login"]))
+        echo '<script> alert("Loggen In."); </script>';
+    ?> 
+    <?php
     if (isset($_GET["c"]))
         echo '<script> alert("Message sent successfully..."); </script>';
+    ?> 
+    <?php
+    if (isset($_GET["v"]))
+        echo '<script> alert("Email Verified. You can login now."); </script>';
     ?> 
     <nav class="navbar navbar-inverse navbar-expand-lg sticky-top">
         <div class="container-fluid">
@@ -126,7 +134,9 @@
                             <div class="dropdown-menu dropdown-menu-right ">
                                 <a class="dropdown-item">Hello, <?php echo $id; ?></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/Digital-Hostel/student_dashboard.php">Dashboard</a>
+                                <a class="dropdown-item" href="/Digital-Hostel/error.php">Dashboard</a>
+                                <!-- <li class="divider"></li> -->
+                                <a class="dropdown-item" href="/Digital-Hostel/error.php">Update Profile</a>
                                 <!-- <li class="divider"></li> -->
                                 <a class="dropdown-item" href="/Digital-Hostel/error.php">Change Password</a>
                                 <div class="dropdown-divider"></div>
