@@ -4,11 +4,19 @@ function connect() {
     return mysqli_connect("localhost", "root", "", "digital_hostel", "3306");
 }
 
+<<<<<<< Updated upstream
 function addUser($collegeid, $pass, $wmode, $name, $mailid,) {
+=======
+function addUser($collegeid, $name, $gender, $encrypted_password, $mailid,$verification_code) {
+>>>>>>> Stashed changes
     $dsn = connect();
     $x = mysqli_query($dsn, "insert into tbllogin values('$collegeid','$pass','$wmode',now())");
     if ($x == 1) {
+<<<<<<< Updated upstream
         $x = mysqli_query($dsn, "insert into tblregistration(`collegeid`, `name`, `mailid`, `lastmodified`) values('$collegeid','$name','$mailid',now())");
+=======
+        $x = mysqli_query($dsn, "insert into tblregistration(`collegeid`, `name`,`gender`, `mailid`, `verification_code`, `lastmodified`) values('$collegeid','$name','$gender','$mailid', '$verification_code',now())");
+>>>>>>> Stashed changes
         return $x;
     }
     return 0;
