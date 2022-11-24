@@ -55,7 +55,7 @@
         <div class="facility row row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 g-4">
             <div class="col">
                 <div class="card h-100">
-                    <img src="images/wifi.png" class="card-img-top" alt="" />
+                    <img src="images/wifi.png" style="height: 220px;"  class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title">Free Wifi</h5>
                         <p class="card-text">
@@ -66,7 +66,7 @@
             </div>
             <div class="col">
                 <div class="card h-100">
-                    <img src="images/mess.jpg" class="card-img-top" alt="" />
+                    <img src="images/mess.jpg" style="height: 220px;" class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title">Hostel food facility</h5>
                         <p class="card-text">Mess, canteen, RO water system, hot water supply through geysers in winter.</p>
@@ -75,7 +75,7 @@
             </div>
             <div class="col">
                 <div class="card h-100">
-                    <img src="images/security.jpg" class="card-img-top" alt="" />
+                    <img src="images/security.jpg" style="height: 220px;" class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title">Safety and Security</h5>
                         <p class="card-text">Separate residential facility for boys and girls within the campus.</p>
@@ -84,7 +84,7 @@
             </div>
             <div class="col">
                 <div class="card h-100">
-                    <img src="images/gym.jpg" class="card-img-top" alt="" />
+                    <img src="images/gym.jpg"  style="height: 220px;"class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title">Gymnasium</h5>
                         <p class="card-text">
@@ -95,7 +95,7 @@
             </div>
             <div class="col">
                 <div class="card h-100">
-                    <img src="images/ground.jpg" class="card-img-top" alt="" />
+                    <img src="images/ground.jpg" style="height: 220px;" class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title">Sports and Activity</h5>
                         <p class="card-text">Sports (indoor & outdoor) equipments and infrastructure. Sports event HPL is organized every year.</p>
@@ -104,7 +104,7 @@
             </div>
             <div class="col">
                 <div class="card h-100">
-                    <img src="images/security.jpg" class="card-img-top" alt="" />
+                    <img src="images/security.jpg" style="height: 220px;" class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title">CCTV Surveillance</h5>
                         <p class="card-text">
@@ -115,7 +115,7 @@
             </div>
             <div class="col">
                 <div class="card h-100">
-                    <img src="images/electricity.jpg" class="card-img-top" alt="" />
+                    <img src="images/electricity.jpg" style="height: 220px;" class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title">24x7 electricity</h5>
                         <p class="card-text">24x7 electricity in all the hostels. Proper backup for electricity failure.</p>
@@ -124,7 +124,7 @@
             </div>
             <div class="col">
                 <div class="card h-100">
-                    <img src="images/room.jpg" class="card-img-top" alt="" />
+                    <img src="images/room.jpg" style="height: 220px;" class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title">Guest Room facility</h5>
                         <p class="card-text">
