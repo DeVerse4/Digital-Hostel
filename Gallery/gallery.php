@@ -1,9 +1,9 @@
 <?php
 ob_start();
 include("../header.php");
+include("../admin.php");
 $buffer = ob_get_contents();
 ob_end_clean();
-
 $title = "Gallery | Arya Bhatta Hostel";
 $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
 
@@ -18,7 +18,7 @@ echo $buffer;
             </div>
         </div>
     </div>
-    <!--Heading ends-->    
+    <!--Heading ends-->
     <?php
     if ($id == "") {
         echo '';
@@ -47,10 +47,10 @@ echo $buffer;
                             </div>
                             <div class="form-elements uploadFile">
                                 <label for="photo" class="input-label">Upload: </label>
-                                <input type="file" id="galleryPhoto" name="photo" class="" autofocus>
+                                <input type="file" id="galleryPhoto" name="photo" class="">
                             </div>
                         </div>
-                        <div class="form-elements btns">
+                        <div class="btns">
                             <button name="cancel" class="btn btn-md btn-outline-danger cancelBtn">Cancel</button>
                             <button class="btn btn-md btn-primary" id="uploadBtn" type="submit">Upload a
                                 Picture</button>
@@ -67,11 +67,11 @@ echo $buffer;
     <?php
     if ($id == "") {
         echo '<div class="filter-bar">'
-        . '<div class="container filter_nav">';
+            . '<div class="container filter_nav">';
     } else {
         $collegeid = $_SESSION["id"];
         echo '<div class="container-fluid filter-bar">'
-        . '<div class="container filter_nav d-flex justify-content-between align-items-center">';
+            . '<div class="container filter_nav d-flex justify-content-between align-items-center">';
     }
     ?>
     <div>
@@ -108,73 +108,33 @@ echo $buffer;
     ?>
 
 </div>
-<!--        <div class="filter_nav">
-            <div class="filters">
-            </div>
-        </div>-->
+
 <!-- filter images-->
 <div class="gallery">
-    <div class="image" data-name="dj">
+    <?php
+    $x = showPhoto();
+    for ($i = 0; $i < mysqli_num_rows($x); $i++) {
+        $rs = mysqli_fetch_row($x);
+    ?>
+    <div class="image" data-name=<?php echo "$rs[3]"; ?>>
         <span class="d-flex flex-column justify-content-between border-primary">
-            <img src="Hostel images/dj1.jpg" alt="">
-            <?php
-            if ($id == "") {
-                echo '';
-            } else {
-                $collegeid = $_SESSION["id"];
-                echo" <div class='d-flex flex-row justify-content-between p-2'>
+            <img src=<?php echo "fetchPhoto.php?n=$rs[0]"; ?> alt="">
+            <!-- <?php
+        if ($id == "") {
+            echo '';
+        } else {
+            $collegeid = $_SESSION["id"];
+            echo "<div class='d-flex flex-row justify-content-between p-2'>
                         <i class='fa-regular fa-pen-to-square'></i>
                         <i class='fa-solid fa-trash'></i>
                     </div>";
-            }
-            ?>
+        }
+            ?> -->
         </span>
     </div>
-    <div class="image" data-name="festival">
-        <span class="d-flex flex-column justify-content-between"><img src="Hostel images/festivals1.jpg" alt="">
-            <?php
-            if ($id == "") {
-                echo '';
-            } else {
-                $collegeid = $_SESSION["id"];
-                echo" <div class='d-flex flex-row justify-content-between p-2'>
-                        <i class='fa-regular fa-pen-to-square'></i>
-                        <i class='fa-solid fa-trash'></i>
-                    </div>";
-            }
-            ?>
-        </span>
-    </div>
-    <div class="image" data-name="hpl">
-        <span class="d-flex flex-column justify-content-between"><img src="Hostel images/hpl1.jpg" alt="">
-            <?php
-            if ($id == "") {
-                echo '';
-            } else {
-                $collegeid = $_SESSION["id"];
-                echo" <div class='d-flex flex-row justify-content-between p-2'>
-                        <i class='fa-regular fa-pen-to-square'></i>
-                        <i class='fa-solid fa-trash'></i>
-                    </div>";
-            }
-            ?>
-        </span>
-    </div>
-    <div class="image" data-name="spandan">
-        <span class="d-flex flex-column justify-content-between"><img src="Hostel images/spandan1.jpg" alt="">
-            <?php
-            if ($id == "") {
-                echo '';
-            } else {
-                $collegeid = $_SESSION["id"];
-                echo" <div class='d-flex flex-row justify-content-between p-2'>
-                        <i class='fa-regular fa-pen-to-square'></i>
-                        <i class='fa-solid fa-trash'></i>
-                    </div>";
-            }
-            ?>
-        </span>
-    </div>
+    <?php
+    }
+    ?>
 </div>
 </div>
 <!--Filter bar ends-->
@@ -210,4 +170,3 @@ include '../footer.php';
         uploadForm.style.pointerEvents = 'none';
     });
 </script>
-
