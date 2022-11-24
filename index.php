@@ -13,8 +13,11 @@
                 <div class="carousel-caption">
                     <h2><span>Aryabhatta Hostel</span></h2>
                     <h3>Forever Home.</h3>
-                    <p>We understand that most of our students are moving away from home for the first time, so we strive to make the transition as smooth as possible by providing comfortable, safe and homely set-up within the campus</p>
-                    <p><a class="reg-btn" href="Registration/registration.php">Register</a><a href="#" class="contact-btn">Contact</a></p>
+                    <p>We understand that most of our students are moving away from home for the first time, so we
+                        strive to make the transition as smooth as possible by providing comfortable, safe and homely
+                        set-up within the campus</p>
+                    <p><a class="reg-btn" href="Registration/registration.php">Register</a><a href=""
+                            class="contact-btn">Contact</a></p>
                 </div>
             </div>
             <div class="carousel-item">
@@ -24,8 +27,11 @@
                 <div class="carousel-caption ">
                     <h2><span>Kalpana Chawla Hostel</span></h2>
                     <h3>Forever Home.</h3>
-                    <p>We understand that most of our students are moving away from home for the first time, so we strive to make the transition as smooth as possible by providing comfortable, safe and homely set-up within the campus</p>
-                    <div class="btns"><a class="reg-btn" href="Registration/registration.php">Register</a><a class="contact-btn" href="#">Contact</a></div>
+                    <p>We understand that most of our students are moving away from home for the first time, so we
+                        strive to make the transition as smooth as possible by providing comfortable, safe and homely
+                        set-up within the campus</p>
+                    <div class="btns"><a class="reg-btn" href="Registration/registration.php">Register</a><a
+                            class="contact-btn" href="#">Contact</a></div>
                 </div>
             </div>
         </div>
@@ -55,11 +61,11 @@
         <div class="facility row row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 g-4">
             <div class="col">
                 <div class="card h-100">
-                    <img src="images/wifi.png" style="height: 220px;"  class="card-img-top" alt="" />
+                    <img src="images/wifi.png" style="height: 220px;" class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title">Free Wifi</h5>
                         <p class="card-text">
-                        24x7 free high speed Wi-Fi connectivity provided in all hostels.
+                            24x7 free high speed Wi-Fi connectivity provided in all hostels.
                         </p>
                     </div>
                 </div>
@@ -69,7 +75,8 @@
                     <img src="images/mess.jpg" style="height: 220px;" class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title">Hostel food facility</h5>
-                        <p class="card-text">Mess, canteen, RO water system, hot water supply through geysers in winter.</p>
+                        <p class="card-text">Mess, canteen, RO water system, hot water supply through geysers in winter.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -84,11 +91,11 @@
             </div>
             <div class="col">
                 <div class="card h-100">
-                    <img src="images/gym.jpg"  style="height: 220px;"class="card-img-top" alt="" />
+                    <img src="images/gym.jpg" style="height: 220px;" class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title">Gymnasium</h5>
                         <p class="card-text">
-                        Sports (indoor & outdoor) and Gym facility is also available.
+                            Sports (indoor & outdoor) and Gym facility is also available.
                         </p>
                     </div>
                 </div>
@@ -98,7 +105,8 @@
                     <img src="images/ground.jpg" style="height: 220px;" class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title">Sports and Activity</h5>
-                        <p class="card-text">Sports (indoor & outdoor) equipments and infrastructure. Sports event HPL is organized every year.</p>
+                        <p class="card-text">Sports (indoor & outdoor) equipments and infrastructure. Sports event HPL
+                            is organized every year.</p>
                     </div>
                 </div>
             </div>
@@ -108,7 +116,7 @@
                     <div class="card-body">
                         <h5 class="card-title">CCTV Surveillance</h5>
                         <p class="card-text">
-                        CCTV cameras at entrances of all hostels and foyer inside the campus.
+                            CCTV cameras at entrances of all hostels and foyer inside the campus.
                         </p>
                     </div>
                 </div>
@@ -118,7 +126,8 @@
                     <img src="images/electricity.jpg" style="height: 220px;" class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title">24x7 electricity</h5>
-                        <p class="card-text">24x7 electricity in all the hostels. Proper backup for electricity failure.</p>
+                        <p class="card-text">24x7 electricity in all the hostels. Proper backup for electricity failure.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -128,7 +137,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Guest Room facility</h5>
                         <p class="card-text">
-                        Guest room for parents / guardian / guest person(s) at reasonable charges.
+                            Guest room for parents / guardian / guest person(s) at reasonable charges.
                         </p>
                     </div>
                 </div>
@@ -151,12 +160,101 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12- col xs-12">
                 <div class="video-area">
-                    <iframe class="yt-vid" src="https://www.youtube.com/embed/lKfd6j1EBPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="yt-vid" src="https://www.youtube.com/embed/lKfd6j1EBPU" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12- col-xs-12">
                 <div class="video-area">
-                    <iframe class="yt-vid" src="https://www.youtube.com/embed/HBbMk8_IZHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="yt-vid" src="https://www.youtube.com/embed/HBbMk8_IZHc" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================ -->
+<!-- TESTIMONIALS  -->
+<!-- ================ -->
+
+<section>
+    <div class="container">
+        <div class="panel-group" id="faqAccordion">
+            <div class="panel panel-default ">
+                <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                    data-parent="#faqAccordion" data-target="#question0">
+                    <?php
+                    include 'admin.php';
+                    $x = fetchfaq();
+                    echo '<pre>';
+                    print_r($x);
+                    ?>
+                    <h4 class="panel-title">
+                        <a class="ing">Q: What is Lorem Ipsum?</a>
+                    </h4>
+
+                </div>
+                <div id="question0" class="panel-collapse collapse" style="height: 0px;">
+                    <div class="panel-body">
+                        <h5><span class="label label-primary">Answer</span></h5>
+
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default ">
+                <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse"
+                    data-parent="#faqAccordion" data-target="#question1">
+                    <h4 class="panel-title">
+                        <a class="ing">Q: Why do we use it?</a>
+                    </h4>
+
+                </div>
+                <div id="question1" class="panel-collapse collapse" style="height: 0px;">
+                    <div class="panel-body">
+                        <h5><span class="label label-primary">Answer</span></h5>
+
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a
+                            page when looking at its layout.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default ">
+                <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse"
+                    data-parent="#faqAccordion" data-target="#question2">
+                    <h4 class="panel-title">
+                        <a class="ing">Q: Where does it come from?</a>
+                    </h4>
+
+                </div>
+                <div id="question2" class="panel-collapse collapse" style="height: 0px;">
+                    <div class="panel-body">
+                        <h5><span class="label label-primary">Answer</span></h5>
+
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text..</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default ">
+                <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse"
+                    data-parent="#faqAccordion" data-target="#question3">
+                    <h4 class="panel-title">
+                        <a class="ing">Q: Where can I get some?</a>
+                    </h4>
+
+                </div>
+                <div id="question3" class="panel-collapse collapse" style="height: 0px;">
+                    <div class="panel-body">
+                        <h5><span class="label label-primary">Answer</span></h5>
+
+                        <p>There are many variations of passages of Lorem Ipsum </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -186,9 +284,8 @@
                                 <div class="layer"></div>
                                 <div class="content">
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sunt in consequuntur molestiae
-                                        enim odit! Sint, tempora ut accusantium doloremque recusandae commodi provident blanditiis fuga
-                                        officiis, saepe, quisquam nesciunt ducimus.
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sunt in
+                                        consequuntur molestiae
                                     </p>
                                     <div class="rating">
                                         <div class="flex gap-0.5">
@@ -220,9 +317,7 @@
                                 <div class="layer"></div>
                                 <div class="content">
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sunt in consequuntur molestiae
-                                        enim odit! Sint, tempora ut accusantium doloremque recusandae commodi provident blanditiis fuga
-                                        officiis, saepe, quisquam nesciunt ducimus.
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                     </p>
                                     <div class="rating">
                                         <div class="flex gap-0.5">
@@ -254,9 +349,7 @@
                                 <div class="layer"></div>
                                 <div class="content">
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sunt in consequuntur molestiae
-                                        enim odit! Sint, tempora ut accusantium doloremque recusandae commodi provident blanditiis fuga
-                                        officiis, saepe, quisquam nesciunt ducimus.
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                     </p>
                                     <div class="rating">
                                         <div class="flex gap-0.5">
@@ -288,9 +381,7 @@
                                 <div class="layer"></div>
                                 <div class="content">
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sunt in consequuntur molestiae
-                                        enim odit! Sint, tempora ut accusantium doloremque recusandae commodi provident blanditiis fuga
-                                        officiis, saepe, quisquam nesciunt ducimus.
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                     </p>
                                     <div class="rating">
                                         <div class="flex gap-0.5">
@@ -312,9 +403,7 @@
                                 <div class="layer"></div>
                                 <div class="content">
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sunt in consequuntur molestiae
-                                        enim odit! Sint, tempora ut accusantium doloremque recusandae commodi provident blanditiis fuga
-                                        officiis, saepe, quisquam nesciunt ducimus.
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                     </p>
                                     <div class="rating">
                                         <div class="flex gap-0.5">
@@ -371,13 +460,15 @@
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
                                     <label for="name" class="">Your name</label>
-                                    <input type="text" id="name" placeholder="Your name here" name="name" class="form-control">
+                                    <input type="text" id="name" placeholder="Your name here" name="name"
+                                        class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
                                     <label for="email" class="">Your email</label>
-                                    <input type="text" id="email" placeholder="vgi@vgi.com" name="email" class="form-control">
+                                    <input type="text" id="email" placeholder="vgi@vgi.com" name="email"
+                                        class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -385,7 +476,8 @@
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
                                     <label for="subject" class="">Subject</label>
-                                    <input type="text" id="subject" name="subject" placeholder="Subject" class="form-control">
+                                    <input type="text" id="subject" name="subject" placeholder="Subject"
+                                        class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -393,7 +485,8 @@
                             <div class="col-md-12">
                                 <div class="md-form">
                                     <label for="message">Message</label>
-                                    <textarea type="text" id="message" placeholder="Message" name="message" rows="2" class="form-control md-textarea" style="resize: none;"></textarea>
+                                    <textarea type="text" id="message" placeholder="Message" name="message" rows="2"
+                                        class="form-control md-textarea" style="resize: none;"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -405,7 +498,9 @@
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12- col-xs-12">
                 <div class="map-area">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d224337.6852025422!2d77.49773912305412!3d28.531412787546984!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x652350c1411a5f55!2sVishveshwarya%20Group%20of%20Institutions%20(B.tech%20MBA%20B.Pharma%20B.ed%20Polytechnic%20etc%20Courses)!5e0!3m2!1sen!2sin!4v1667767246138!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d224337.6852025422!2d77.49773912305412!3d28.531412787546984!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x652350c1411a5f55!2sVishveshwarya%20Group%20of%20Institutions%20(B.tech%20MBA%20B.Pharma%20B.ed%20Polytechnic%20etc%20Courses)!5e0!3m2!1sen!2sin!4v1667767246138!5m2!1sen!2sin"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
