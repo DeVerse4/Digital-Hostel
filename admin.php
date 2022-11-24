@@ -88,3 +88,8 @@ function addMessage($name, $email, $subject, $message) {
     $x = mysqli_query($dsn, "INSERT INTO `tblcontact`(`name`, `email`, `subject`, `message`, `contact_datetime`) VALUES('$name','$email','$subject','$message',now())");
     return $x;
 }
+function fetchfaq(){
+    $dsn = connect();
+    $x = mysqli_query($dsn, "SELECT * FROM `tblfaq`");
+    return $x;
+}

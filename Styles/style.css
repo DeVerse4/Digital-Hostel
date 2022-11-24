@@ -10,16 +10,18 @@ html {
 }
 
 :root {
-    --blue: #27187e;
+    --blue: #4b49ac;
+    --blue-hover: #3f3e91;
     --navy: #778efd;
     --grey: #aeb8fe;
-    --white: #f1f2f6;
+    --white: #f5f7ff;
     --orange: #ff8600;
 }
 
 body {
     font-family: "montserrat", sans-serif;
     box-sizing: border-box;
+    background-color: var(--white);
 }
 
 /* navbar */
@@ -110,12 +112,15 @@ body {
     .carousel-item {
         height: 80vh !important;
     }
+
     .carousel-caption h2 span {
         font-size: 40px !important;
     }
+
     .carousel-caption h3 {
         font-size: 40px !important;
     }
+
     .carousel-caption p {
         font-size: 16px !important;
     }
@@ -130,21 +135,26 @@ body {
     .navbar-light .navbar-brand {
         margin: auto;
     }
+
     .carousel-caption h2 span {
         font-size: 30px !important;
     }
+
     .carousel-caption h3 {
         font-size: 30px !important;
     }
+
     .carousel-caption p {
         font-size: 14px !important;
         width: 350px !important;
     }
 }
+
 @media only screen and (max-width: 500px) {
     .usefulLinks {
         display: none;
     }
+
     .carousel-caption p {
         font-size: 14px !important;
         width: 350px !important;
@@ -190,6 +200,7 @@ body {
     width: 500px;
     font-size: 18px;
 }
+
 .carousel-caption .btns {
     margin-top: 50px;
 }
@@ -211,6 +222,7 @@ body {
     color: var(--white);
     background: var(--blue);
 }
+
 .carousel-caption .reg-btn:hover {
     background: var(--navy);
     color: var(--white);
@@ -221,12 +233,14 @@ body {
     color: var(--blue);
     background: var(--white);
 }
+
 .carousel-caption .contact-btn:hover {
     transition: 0.1s;
     color: var(--white);
     background: var(--orange);
     /* border: 2px solid var(--white); */
 }
+
 .carousel-inner::before {
     content: '';
     position: absolute;
@@ -284,6 +298,10 @@ body {
     background: var(--white);
 }
 
+.facility .col .card img.card-img-top {
+    height: 200px !important;
+}
+
 
 /*Video*/
 
@@ -322,14 +340,14 @@ body {
 .map-area {
     width: 100%px;
     height: 458px;
-    background: var(--white);
+    /* background: var(--white); */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .video-area {
     width: 100%;
     height: 358px;
-    background: var(--white);
+    /* background: var(--white); */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -454,6 +472,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 .uploadBtn .item {
     padding: 4px 15px;
     font-size: 18px;
@@ -464,6 +483,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 .uploadBtn .item:hover {
     color: var(--white);
     background: var(--blue);
@@ -613,7 +633,7 @@ body {
     }
 
     nav .filters .item,
-    .uploadBtn .item{
+    .uploadBtn .item {
         margin: 5px;
     }
 
@@ -649,20 +669,24 @@ body {
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 .form-signin input[type="email"] {
     margin-bottom: -1px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
+
 .form-signin input[type="text"] {
     margin-bottom: -1px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
 .form-signin input[type="password"] {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
 .input-label {
     font-size: 1.1rem;
     font-weight: 500;
@@ -702,6 +726,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
+
 .form-signin .btn:hover {
     background-color: #ff6f00;
 }
@@ -724,6 +749,7 @@ body {
     min-width: auto;
     padding: 15px;
 }
+
 .form-container {
     display: flex;
     justify-content: center;
@@ -731,6 +757,7 @@ body {
     flex-direction: column;
     height: 100vh;
 }
+
 .complaint-form {
     height: 70vh !important;
 }
@@ -739,10 +766,12 @@ body {
     .form-elements {
         flex-direction: column;
     }
+
     .form-signin .form-control {
         width: 100%;
         margin-left: 0;
     }
+
     .form {
         min-width: 100%;
         margin: 0 2rem;
@@ -755,6 +784,7 @@ body {
     border-radius: 10px;
     padding: 1rem;
 }
+
 .uploadForm .form-select {
     width: 100%;
     border: 1px solid #ccc;
@@ -785,7 +815,7 @@ body {
 }
 
 #uploadForm {
-    
+
     display: none;
     pointer-events: none;
 }
@@ -796,4 +826,34 @@ body {
     justify-content: end;
     gap: 10px;
     width: 100%;
+}
+
+/* About us */
+.overlapText {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.overlapText::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.overlapText h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+    z-index: 1;
 }
