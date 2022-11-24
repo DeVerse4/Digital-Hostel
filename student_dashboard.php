@@ -1,14 +1,17 @@
 <?php
+session_start();
 include 'header.php';
 ?>
 <div id="wrapper"><br>
+
   <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
+
       <div class="container-fluid">
         <h3 class="text-dark mb-4">STUDENT Profile</h3>
-        <div class="row mb-3 bg-primary">
+        <div class="row mb-3">
           <div class="col-lg-4">
-            <div class="card mb-3 " style="height:100vh;">
+            <div class="card mb-3">
               <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4"
                   src="pexels-pixabay-45201.jpg" width="160" height="160" />
                 <div class="mb-3"><button class="btn btn-primary btn-sm" type="button">Change Photo</button></div>
@@ -22,12 +25,15 @@ include 'header.php';
               </div>
               <div class="card-body"><label class="form-label" for="address"><strong>ROOM NUMBER</strong><br /></label>
               </div>
-              <div class="card-body"><label class="form-label" for="address"><strong>FEE PAID</strong><br /></label>
+              <div class="card-body"><label class="form-label" for="address"><strong>FEE PAID </strong><br /></label>
               </div>
               <div class="card-body"></div>
             </div>
           </div>
           <div class="col-lg-8">
+
+
+
             <div class="row">
               <div class="col">
                 <div class="card shadow mb-3">
@@ -40,8 +46,7 @@ include 'header.php';
                         <div class="col">
                           <div class="mb-3"><label class="form-label"
                               for="username"><strong>Username</strong></label><input id="username" class="form-control"
-                              type="text" placeholder="user.name" name="username" />
-                          </div>
+                              type="text" placeholder="user.name" name="username" /></div>
                         </div>
                         <div class="col">
                           <div class="mb-3"><label class="form-label" for="email"><strong>Email
@@ -67,6 +72,7 @@ include 'header.php';
                                 number</strong></label><input id="first_name" class="form-control" type="text"
                               placeholder="+91" value="+91" name="first_name" /></div>
                         </div>
+
                       </div>
                       <div class="mb-3 mt-3"><button class="btn btn-primary btn-sm" type="submit">Save</button></div>
                     </form>
@@ -100,20 +106,15 @@ include 'header.php';
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 </div>
-</div>
-<div>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, dolore aliquam perspiciatis necessitatibus ipsam
-    commodi praesentium alias vitae soluta a animi ipsa veritatis molestias sunt nisi totam id dolores. Temporibus quas
-    quae officia perspiciatis, nulla quos consequuntur tempora quibusdam dolore, impedit quasi nostrum corporis et minus
-    amet odit incidunt repellat! Libero, consequuntur quia? Maxime excepturi consequatur nemo cumque ducimus tenetur,
-    perferendis blanditiis eveniet ipsum a voluptatibus totam quisquam magnam ut, nulla nihil deserunt velit mollitia
-    sit! Architecto magni repellendus vitae ullam placeat ad iste quis voluptate fuga, aspernatur unde mollitia libero
-    et impedit! Laborum maiores a dolorum similique aut alias.</p>
-</div>
 <?php
 include 'footer.php';
 ?>
+
+</body>
+
+</html>

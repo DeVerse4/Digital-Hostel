@@ -1,5 +1,6 @@
 <?php
     include_once '../admin.php';
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     $collegeid = $_REQUEST['collegeid'];
     $mailid = $_REQUEST['mailid'];
@@ -11,23 +12,34 @@
         $collegeid = $_POST['collegeid'];
         $name = $_POST["name"];
         $gender = $_POST["gender"];
+=======
+    if (isset($_POST["submit"])) {
+        $collegeid = $_POST['collegeid'];
+        $name = $_POST["name"];
+>>>>>>> 0d05c0f49b082def834475c1f974a8614b5c9cba
         $mailid = $_POST['mailid'];
         $password = $_POST["pass"];
         $confirmPassword = $_POST['confirmPassword'];
     }
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> 0d05c0f49b082def834475c1f974a8614b5c9cba
 
-    $x = addUser($collegeid, $pass, $wmode, $name, $mailid,);
-    if($x == 1)
-        header("location:../index.php?t=1");
-    else 
-        header("location:../Registration/registration.php?t=0");
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
+    require 'vendor/autoload.php';
     
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     if($pass != $confirmPassword) {
         echo "Passwords do not match";
     }
 =======
+=======
+>>>>>>> 0d05c0f49b082def834475c1f974a8614b5c9cba
     //Mailer instantiation
     $mail = new PHPMailer(true);
 
@@ -57,7 +69,11 @@
         // $encrypted_password = /*password_hash*/($password, PASSWORD_DEFAULT);
         $encrypted_password = $password;
 
+<<<<<<< HEAD
         $x = addUser($collegeid,  $name,$gender, $encrypted_password, $mailid,$verification_code);
+=======
+        $x = addUser($collegeid,  $name, $encrypted_password, $mailid,$verification_code);
+>>>>>>> 0d05c0f49b082def834475c1f974a8614b5c9cba
 
         if($x == 1)
             header("location: email.php?email=$mailid");
@@ -72,5 +88,9 @@
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 
+<<<<<<< HEAD
     
 >>>>>>> Stashed changes
+=======
+    
+>>>>>>> 0d05c0f49b082def834475c1f974a8614b5c9cba
