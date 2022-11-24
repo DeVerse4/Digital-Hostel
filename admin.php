@@ -4,27 +4,11 @@ function connect() {
     return mysqli_connect("localhost", "root", "", "digital_hostel", "3306");
 }
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-function addUser($collegeid, $pass, $wmode, $name, $mailid,) {
-=======
-function addUser($collegeid, $name, $gender, $encrypted_password, $mailid,$verification_code) {
->>>>>>> Stashed changes
-=======
 function addUser($collegeid,  $name, $encrypted_password, $mailid,$verification_code) {
->>>>>>> 0d05c0f49b082def834475c1f974a8614b5c9cba
     $dsn = connect();
     $x = mysqli_query($dsn, "insert into tbllogin(`collegeid`,`pass`,`lastmodified`) values('$collegeid','$encrypted_password',now())");
     if ($x == 1) {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-        $x = mysqli_query($dsn, "insert into tblregistration(`collegeid`, `name`, `mailid`, `lastmodified`) values('$collegeid','$name','$mailid',now())");
-=======
-        $x = mysqli_query($dsn, "insert into tblregistration(`collegeid`, `name`,`gender`, `mailid`, `verification_code`, `lastmodified`) values('$collegeid','$name','$gender','$mailid', '$verification_code',now())");
->>>>>>> Stashed changes
-=======
         $x = mysqli_query($dsn, "insert into tblregistration(`collegeid`, `name`, `mailid`, `verification_code`, `lastmodified`) values('$collegeid','$name','$mailid', '$verification_code',now())");
->>>>>>> 0d05c0f49b082def834475c1f974a8614b5c9cba
         return $x;
     }
     return 0;
