@@ -16,6 +16,16 @@
                 <div class="card mt-5">
                     <div class="card-header">
                        <center> <h4>Attendence</h4></center>
+                       <form action="" method="GET">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <input type="text" name="collegeid" value="<?php if(isset($_GET['collegeid'])){echo $_GET['collegeid'];} ?>" class="form-control">
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
 
                     <div class="card-body">
@@ -34,7 +44,36 @@
                                 <?php 
                                     $con = mysqli_connect("localhost","root","","digital_hostel");
 
-                                    $query = "SELECT * FROM tblregistration";
+                                if(isset($_GET['collegeid']))
+                                {
+                                    $stud_id = $_GET['collegeid'];
+                                    $name = $_GET['collegeid'];
+                                    $gender = $_GET['collegeid'];
+                                    $query = "SELECT * FROM tblregistration WHERE collegeid='$stud_id' OR `name` = '$name' OR `gender` = '$gender'";
+                                    $query_run = mysqli_query($con, $query);
+
+                                    if(mysqli_num_rows($query_run) > 0)
+                                    {
+                                        foreach($query_run as $row)
+                                        {
+                                            ?>
+                                            <tr>
+                                                <td><?= $row['collegeid']; ?></td>
+                                                <td><?= $row['name']; ?></td>
+                                                <td><?= $row['mailid']; ?></td>
+                                                <td><?= $row['lastmodified']; ?></td>
+                                                <th><input type="radio" value="1" name="att<?php echo $start ?>" />Present <input type="radio" value="0" name="att<?php echo $start ?>" checked/>Absent</th>
+                                            </tr 
+                                            <?php
+                                        }
+                                    }
+                                    else
+                                    {
+                                        echo "No Record Found";
+                                    }
+                                }else {
+
+                                    $query = "SELECT * FROM tblregistration WHERE GENDER='M'";
                                     $query_run = mysqli_query($con, $query);
                                     
                                     $start = 0;
@@ -48,7 +87,7 @@
                                                 <td><?= $row['name']; ?></td>
                                                 <td><?= $row['mailid']; ?></td>
                                                 <td><?= $row['lastmodified']; ?></td>
-                                                <th><input type="radio" value="1" name="att<?php echo $start ?>" />Present <input type="radio" value="0" name="att<?php echo $start ?>" >Absent</th>
+                                                <th><input type="radio" value="1" name="att<?php echo $start ?>" />Present <input type="radio" value="0" name="att<?php echo $start ?>" checked/>Absent</th>
                                             </tr>
                                             <?php
                                             $start++;
@@ -62,6 +101,8 @@
                                             </tr>
                                         <?php
                                     }
+                                }
+                                    
                                 ?>
 
                             </tbody>

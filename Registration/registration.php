@@ -34,6 +34,14 @@
                     <input type="text" id="inputName" name="name" class="form-control" placeholder="Full Name" required autofocus>
                 </div>
                 <div class="form-elements">
+                    <label for="gender" class="input-label">Gender</label>
+                    <select id="inputGender" name="gender" class="form-control" required autofocus>
+                        <option value="">--select gender --</option>
+                        <option value="M">MALE</option>
+                        <option value="F">FEMALE</option>
+                    </select>
+                </div>
+                <div class="form-elements">
                     <label for="inputPassword" class="input-label">Password</label>
                     <input type="password" id="inputPassword" name="pass" class="form-control" placeholder="Password" required>
                 </div>

@@ -39,13 +39,13 @@
                          <a href="#!" class="text-reset">About</a>
                      </p>
                      <p>
-                         <a href="#!" class="text-reset">Contact</a>
+                         <a href="#contact" class="text-reset">Contact</a>
                      </p>
                      <p>
                          <a href="#!" class="text-reset">Services</a>
                      </p>
                      <p>
-                         <a href="#!" class="text-reset">Complaints</a>
+                         <a href="Complaint/complaint.php" class="text-reset">Complaints</a>
                      </p>
                      <p>
                          <a href="#!" class="text-reset">Hostel Rules</a>
