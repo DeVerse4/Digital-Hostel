@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Hostel</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    
+<?php 
+include '../header.php'; 
+ $cur_date = date('Y-m-d');
+ ?>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
 
                 <div class="card mt-5">
+                 
                     <div class="card-header">
-                       <center> <h4>Attendence</h4></center>
+                       <center> <h4>Attendence | <?php echo $cur_date;?> </h4></center>
                        <form action="" method="GET">
                             <div class="row">
                                 <div class="col-md-8">
@@ -27,16 +21,17 @@
                             </div>
                         </form>
                     </div>
-
+                  
                     <div class="card-body">
                         
-                        <table class="table table-bordered">
+                      <form action=AttendanceAction.php method=get>
+                            <table class="table table-bordered">
                             <thead>
-                                <tr>
-                                    <th>Collage ID</th>
+                              <tr><th colspan=5 style="text-align:center;"><input type=radio name=timing value='Morning' checked> Morning Attendance   <input type=radio name=timing value='Evening' checked> Evening Attendance</td></tr>
+                              <tr>
+                                    <th>Room NO</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Last Modified</th>
+                                    <th>collegeId</th>
                                     <th>Attendence</th>
                                 </tr>
                             </thead>
@@ -49,7 +44,8 @@
                                     $stud_id = $_GET['collegeid'];
                                     $name = $_GET['collegeid'];
                                     $gender = $_GET['collegeid'];
-                                    $query = "SELECT * FROM tblregistration WHERE collegeid='$stud_id' OR `name` = '$name' OR `gender` = '$gender'";
+                                    $query = 'SELECT a.roomno,reg.name,a.collegeid FROM tblroomallotment a,tblregistration reg WHERE a.collegeid=reg.collegeid;';
+                                    // $query = "SELECT * FROM tblregistration WHERE collegeid='$stud_id' OR `name` = '$name' OR `gender` = '$gender' order by 1";
                                     $query_run = mysqli_query($con, $query);
 
                                     if(mysqli_num_rows($query_run) > 0)
@@ -58,10 +54,10 @@
                                         {
                                             ?>
                                             <tr>
+                                                <td><?= $row['roomno']; ?></td>
+                                                <input type=hidden name=cid<?php echo $start ?> value=<?= $row['name']; ?> >
                                                 <td><?= $row['collegeid']; ?></td>
-                                                <td><?= $row['name']; ?></td>
-                                                <td><?= $row['mailid']; ?></td>
-                                                <td><?= $row['lastmodified']; ?></td>
+                                                
                                                 <th><input type="radio" value="1" name="att<?php echo $start ?>" />Present <input type="radio" value="0" name="att<?php echo $start ?>" checked/>Absent</th>
                                             </tr 
                                             <?php
@@ -69,11 +65,11 @@
                                     }
                                     else
                                     {
-                                        echo "No Record Found";
+                                        echo "</table>No Record Found";
                                     }
                                 }else {
-
-                                    $query = "SELECT * FROM tblregistration WHERE GENDER='M'";
+                                    $query = "SELECT a.roomno,reg.name,a.collegeid FROM tblroomallotment a,tblregistration reg WHERE a.collegeid=reg.collegeid and reg.gender='M';";
+                                    // $query = "SELECT * FROM tblregistration WHERE GENDER='M' order by 1";
                                     $query_run = mysqli_query($con, $query);
                                     
                                     $start = 0;
@@ -83,11 +79,11 @@
                                         {
                                             ?>
                                             <tr>
-                                                <td><?= $row['collegeid']; ?></td>
+                                                <td><?= $row['roomno']; ?></td>
+                                                <input type=hidden name=cid<?php echo $start ?> value=<?= $row['collegeid']; ?> >
                                                 <td><?= $row['name']; ?></td>
-                                                <td><?= $row['mailid']; ?></td>
-                                                <td><?= $row['lastmodified']; ?></td>
-                                                <th><input type="radio" value="1" name="att<?php echo $start ?>" />Present <input type="radio" value="0" name="att<?php echo $start ?>" checked/>Absent</th>
+                                                <td><?= $row['collegeid']; ?></td>
+                                                <th><input type="radio" value="Present" name="att<?php echo $start ?>" />Present <input type="radio" value="Absent" name="att<?php echo $start ?>" checked/>Absent</th>
                                             </tr>
                                             <?php
                                             $start++;
@@ -104,18 +100,18 @@
                                 }
                                     
                                 ?>
-
+                               <input type=hidden name=counter value=<?php echo $start ?> />
+                               <tr><th colspan=5 style="text-align:center;"><input type=submit value=' S a v e ' class="btn btn-primary">  <input type=reset value=' C l e a r ' class="btn btn-primary"></td></tr>
+                               <tr><th colspan=5><?php if(isset($_GET["tt"])) echo "Attendance Submited"; ?></th></tr>
+                              
                             </tbody>
                         </table>
-
+                       
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<?php
+include '../footer.php';
