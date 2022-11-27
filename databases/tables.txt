@@ -1,0 +1,40 @@
+   create table tblRoom
+   (
+      rollno int(5) primary key,
+      hostalname varchar(20),
+      floor varchar(30),
+      wing varchar(30),
+      details varchar(100),
+      status varchar(20),
+      lastModified datetime
+   );
+
+   create table tblRoomAllotment
+   (
+      sno int(5) primary key auto_increment,
+      collegeid varchar(20) references tblLogin(collegeId),
+      roomno int(5) references tblRoom(roomno),
+      allotmentdate datetime
+   );
+
+   create table tblAttendance
+   (
+      sno int(5) primary key auto_increment,
+      collegeId varchar(20) references tblLogin(collegeId),
+      roomid varchar(20) references tblRoom(roomno),
+      attendance varchar(20),
+      remarks varchar(50),
+      attendancedate datetime
+   );
+
+insert into tblRoom values(103,'AryaBhatt','Ground Floor','Sr. Wings','Bad, Table, Chair.','OK');
+
+insert into tblRoomAllotment(collegeid,roomno,allotmentdate) values('cs0123483',103,now());
+
+
+delete from tblRoomAllotment where sno=2;
+select * from tblRoom;
+select * from tblRoomAllotment;
+
+
+

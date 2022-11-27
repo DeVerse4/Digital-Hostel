@@ -39,10 +39,12 @@
     <?php
     $id = "";
     $mode = "";
+    $name = "";
     session_start();
     if (isset($_SESSION["id"])) {
         $id = $_SESSION["id"];
         $mode = $_SESSION["mode"];
+        $name = $_SESSION["name"];
     }
     ?>
     <?php
@@ -63,7 +65,7 @@
     ?>
     <?php
     if (isset($_GET["login"]))
-        echo '<script> alert("Loggen In."); </script>';
+        echo '<script> alert("Logged In."); </script>';
     ?>
     <?php
     if (isset($_GET["c"]))
@@ -93,35 +95,44 @@
                         <a class="nav-link" href="/Digital-Hostel/Gallery/gallery.php">Gallery</a>
                     </li>
                     <?php if ($mode == "admin") { ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Digital-Hostel/error.php">Attendance</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
+                            Attendance
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/Digital-Hostel/Attendance/attendance@boys.php">Mark
+                                Attendance</a>
+                            <a class="dropdown-item"
+                                href="/Digital-Hostel/Attendance/AttendanceboysReport.php">Attendance Report</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/Digital-Hostel/error.php" role="button"
-                            data-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
                             Admin
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/Digital-Hostel/error.php">Generate Pass</a>
-                            <a class="dropdown-item" href="/Digital-Hostel/error.php">Student details</a>
-                            <a class="dropdown-item" href="/Digital-Hostel/error.php">Add Notice</a>
-                            <a class="dropdown-item" href="/Digital-Hostel/error.php">Feedbacks</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/pass_system/passReport.php">Gate Passes</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/alluserdetails.php">Student details</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/roomAllotment.php">Room Alloatment</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/roomReport.php">Room Report</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/">Add Notice</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/">Feedbacks</a>
                             <a class="dropdown-item" href="/Digital-Hostel/Complaint/complaintReport.php">Complains</a>
                         </div>
                     </li>
                     <?php } ?>
                     <?php if ($mode == "student") { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Digital-Hostel/error.php">Notices</a>
+                        <a class="nav-link" href="/Digital-Hostel/">Notices</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/Digital-Hostel/error.php" role="button"
-                            data-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="/Digital-Hostel/" role="button" data-toggle="dropdown"
+                            aria-expanded="false">
                             Services
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/Digital-Hostel/error.php">Generate Pass</a>
-                            <a class="dropdown-item" href="/Digital-Hostel/error.php">Attendance</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/pass_system/passform.php">Generate Pass</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/findFriend.php">Find Friend</a>
                         </div>
                     </li>
                     <?php } ?>
@@ -131,21 +142,21 @@
                     </li>
                     <?php } else { ?>
                     <li class="nav-item dropdown">
-                        <a class="nav-profile dropdown-toggle" href="/Digital-Hostel/error.php" role="button"
+                        <a class="nav-profile dropdown-toggle" href="/Digital-Hostel/" role="button"
                             data-toggle="dropdown" aria-expanded="false">
                             <img src="/Digital-Hostel/images/default.png" height="40" width="40"
                                 style="border-radius: 30px; border: 1px solid black;" alt="User"></a>
 
                         <div class="dropdown-menu dropdown-menu-right ">
                             <a class="dropdown-item">Hello,
-                                <?php echo $id; ?>
+                                <?php echo $name; ?>
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/Digital-Hostel/error.php">Dashboard</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/dashboard/studentDashboard.php">Dashboard</a>
                             <!-- <li class="divider"></li> -->
-                            <a class="dropdown-item" href="/Digital-Hostel/error.php">Update Profile</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/">Update Profile</a>
                             <!-- <li class="divider"></li> -->
-                            <a class="dropdown-item" href="/Digital-Hostel/error.php">Change Password</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/">Change Password</a>
                             <div class="dropdown-divider"></div>
                             <?php if ($mode != "admin") { ?>
                             <a class="dropdown-item" href="/Digital-Hostel/Feedback.php"><b>Feedback</b></a>

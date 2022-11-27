@@ -8,9 +8,9 @@ function connect()
 function addUser($collegeid, $name, $encrypted_password, $mailid, $verification_code)
 {
     $dsn = connect();
-    $x = mysqli_query($dsn, "insert into tbllogin(`collegeid`,`pass`,`lastmodified`) values('$collegeid','$encrypted_password',now())");
+    $x = mysqli_query($dsn, "INSERT INTO tbllogin(`collegeid`,`pass`,`lastmodified`) values('$collegeid','$encrypted_password',now())");
     if ($x == 1) {
-        $x = mysqli_query($dsn, "insert into tblregistration(`collegeid`, `name`, `mailid`, `verification_code`, `lastmodified`) values('$collegeid','$name','$mailid', '$verification_code',now())");
+        $x = mysqli_query($dsn, "INSERT INTO tblregistration(`collegeid`, `name`, `mailid`, `verification_code`, `lastmodified`) values('$collegeid','$name','$mailid', '$verification_code',now())");
         return $x;
     }
     return 0;
@@ -19,27 +19,52 @@ function addUser($collegeid, $name, $encrypted_password, $mailid, $verification_
 function checkId($collegeid, $pass)
 {
     $dsn = connect();
-    $x = mysqli_query($dsn, "select wmode from tbllogin where collegeid='$collegeid' and binary pass='$pass'");
+    $x = mysqli_query($dsn, "SELECT `wmode`,`name` FROM `tblLogin` e,`tblRegistration` r WHERE e.`collegeid`='$collegeid' AND BINARY `pass`='$pass' AND e.`collegeid` = r.`collegeid`");
     return $x;
 }
 
 function fetchEmail($collegeid)
 {
     $dsn = connect();
-    $x = mysqli_query($dsn, "select mailid from tblregistration where collegeid='$collegeid'");
+    $x = mysqli_query($dsn, "SELECT mailid from tblregistration where collegeid='$collegeid'");
     return $x;
 }
+function getRoomNo()
+{
+    $dsn = connect();
+    $x = mysqli_query($dsn, "SELECT roomno,floor,wing,hostalname from tblRoom order by 1");
+    return $x;
+}
+function roomAlloted($collegeid, $roomno, $roomtype, $roomstatus, $roomallotmentdate)
+{
+    $dsn = connect();
+    $x = mysqli_query($dsn, "INSERT INTO tblroomallotment(`collegeid`, `roomno`, `roomtype`, `roomstatus`, `allotmentdate`) values('$collegeid','$roomno','$roomtype','$roomstatus',now())");
+    return $x;
+}
+function getAllRooms()
+{
+    $dsn = connect();
+    $x = mysqli_query($dsn, "SELECT r.roomno,r.roomtype,r.floor,r.wing,a.allotmentdate,a.collegeid,reg.name FROM tblroom r,tblroomallotment a,tblregistration reg WHERE r.roomno=a.roomno AND a.collegeid=reg.collegeid");
+    return $x;
+}
+function getCollegeId()
+{
+    $dsn = connect();
+    $x = mysqli_query($dsn, "SELECT collegeId,name,mobile from tblRegistration order by 1");
+    return $x;
+}
+
 
 function checkEmail($email)
 {
     $dsn = connect();
-    $x = mysqli_query($dsn, "select verification_code from tblregistration where mailid='$email'");
+    $x = mysqli_query($dsn, "SELECT verification_code from tblregistration where mailid='$email'");
     return $x;
 }
 function isVerified($collegeid)
 {
     $dsn = connect();
-    $x = mysqli_query($dsn, "select verification_code,mailid from tblregistration where collegeid='$collegeid'");
+    $x = mysqli_query($dsn, "SELECT verification_code,mailid from tblregistration where collegeid='$collegeid'");
     return $x;
 }
 
@@ -80,7 +105,7 @@ function deleteComplaint($sno)
 function getComplaint($sno)
 {
     $dsn = connect();
-    $x = mysqli_query($dsn, "select * from tblComplaint where sno = $sno");
+    $x = mysqli_query($dsn, "SELECT * from tblComplaint where sno = $sno");
     return $x;
 }
 
@@ -105,7 +130,7 @@ function fetchPhoto($n)
 function showPhoto()
 {
     $dsn = connect();
-    $x = mysqli_query($dsn, "select * from tblgallery order by 1 desc");
+    $x = mysqli_query($dsn, "SELECT * from tblgallery order by 1 desc");
     return $x;
 }
 
@@ -119,5 +144,18 @@ function fetchfaq()
 {
     $dsn = connect();
     $x = mysqli_query($dsn, "SELECT * FROM `tblfaq`");
+    return $x;
+}
+
+function singeleUserComplaint($collegeid)
+{
+    $dsn = connect();
+    $x = mysqli_query($dsn, "SELECT * FROM `tblcomplaint` WHERE `collegeid` = '$collegeid'");
+    return $x;
+}
+function addPass($name, $collegeid, $room_no, $phone_no, $destination, $purpose, $out_date, $return_date, $passid)
+{
+    $dsn = connect();
+    $x = mysqli_query($dsn, "INSERT INTO `passgeneration`(`name`, `college_id`, `room_no`, `phone_no`, `destination`, `purpose`, `out_date`,returndate,passid) VALUES ('$name','$collegeid','$room_no','$phone_no','$destination','$purpose','$out_date','$return_date','$passid')");
     return $x;
 }
