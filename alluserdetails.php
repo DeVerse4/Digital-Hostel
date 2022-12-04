@@ -62,10 +62,8 @@ include 'header.php';
                                         echo "No Record Found";
                                     }
                                 }else {
-
-                                    $query = "SELECT * FROM tblregistration WHERE GENDER='M'";
-                                    $query_run = mysqli_query($con, $query);
-                                    
+                                    $query = "SELECT * FROM tblregistration WHERE GENDER='Male'";
+                                    $query_run = mysqli_query($con, $query);            
                                     $start = 0;
                                     if(mysqli_num_rows($query_run) > 0)
                                     {
@@ -77,8 +75,6 @@ include 'header.php';
                                                 <td><?= $row['collegeid']; ?></td>
                                                 <td><?= $row['name']; ?></td>
                                                 <td><?= $row['mailid']; ?></td>
-                                                
-                                               
                                             <?php
                                             $start++;
                                         }

@@ -1,6 +1,5 @@
 <?php
 include 'header.php';
-include 'admin.php';
 ?>
 <table class="table table-striped table-hover" style="height: 50vh;">
     <tr>

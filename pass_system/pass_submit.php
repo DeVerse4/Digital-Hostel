@@ -24,8 +24,6 @@ if (isset($_POST['submit'])) {
   }
   $passid = generateRandomString();
   $result = addPass($name, $collegeid, $room_no, $phone_no, $destination, $purpose, $out_date, $return_date, $passid);
-  header("location:../index.php?pass=1");
+  header("location:passform.php?pa=1");
 }
-
-
 ?>

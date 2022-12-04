@@ -72,7 +72,7 @@ if ($query == 1) {
   $message .= '<div>';
   $message .= '<h3 style="display: flex; flex-direction: row; justify-content: space-between; ">';
   $message .= '<b>Pass Status:</b>';
-  $message .= '<span style="width:200px; text-align: end;">Denied</span>';
+  $message .= '<span style="width:200px;.color:red; text-align: end;">Denied</span>';
   $message .= '</h3>';
   $message .= ' </div>';
   $message .= ' </div>';

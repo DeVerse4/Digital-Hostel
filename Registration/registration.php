@@ -1,13 +1,13 @@
 <?php
-    ob_start();
-    include("../header.php");
-    $buffer=ob_get_contents();
-    ob_end_clean();
+ob_start();
+include("../header.php");
+$buffer = ob_get_contents();
+ob_end_clean();
 
-    $title = "Registration | Arya Bhatta Hostel";
-    $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+$title = "Registration | Arya Bhatta Hostel";
+$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
 
-    echo $buffer;
+echo $buffer;
 ?>
 
 <div class="form-container" style='background: #f1f2f6'>
@@ -23,31 +23,36 @@
             <div class="form-section ">
                 <div class="form-elements">
                     <label for="inputEmail" class="input-label">Email address</label>
-                    <input type="email" id="inputEmail" name="mailid" class="form-control" placeholder="Email address" required autofocus>
+                    <input type="email" id="inputEmail" name="mailid" class="form-control" placeholder="Email address"
+                        required autofocus>
                 </div>
                 <div class="form-elements">
                     <label for="collegeID" class="input-label">College ID</label>
-                    <input type="text" id="inputcollegeid" name="collegeid" class="form-control" placeholder="College ID" required autofocus>
+                    <input type="text" id="inputcollegeid" name="collegeid" class="form-control"
+                        placeholder="College ID" required autofocus>
                 </div>
                 <div class="form-elements">
                     <label for="inputName" class="input-label">Full Name</label>
-                    <input type="text" id="inputName" name="name" class="form-control" placeholder="Full Name" required autofocus>
+                    <input type="text" id="inputName" name="name" class="form-control" placeholder="Full Name" required
+                        autofocus>
                 </div>
                 <div class="form-elements">
                     <label for="gender" class="input-label">Gender</label>
                     <select id="inputGender" name="gender" class="form-control" required autofocus>
                         <option value="">--select gender --</option>
-                        <option value="M">MALE</option>
-                        <option value="F">FEMALE</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                     </select>
                 </div>
                 <div class="form-elements">
                     <label for="inputPassword" class="input-label">Password</label>
-                    <input type="password" id="inputPassword" name="pass" class="form-control" placeholder="Password" required>
+                    <input type="password" id="inputPassword" name="pass" class="form-control" placeholder="Password"
+                        required>
                 </div>
                 <div class="form-elements">
                     <label for="confirmPassword" class="input-label">Confirm Password</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+                        placeholder="Confirm Password" required>
                 </div>
             </div>
             <div class="links">

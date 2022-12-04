@@ -1,6 +1,5 @@
 <?php
 include 'header.php';
-include 'admin.php';
 ?>
 
 <div class="form-container" style='background: #f1f2f6'>

@@ -85,6 +85,9 @@
 
  <!--Custom JS-->
  <script src="/Digital-Hostel/Scripts/script.js"></script>
+ <!-- For Sweet alerts -->
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
  </body>
 

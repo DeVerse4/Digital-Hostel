@@ -1,8 +1,9 @@
 <?php
 include '../header.php';
-include '../admin.php';
+// include '../admin.php';
 ?>
-<div class="vh-100">
+<div class="">
+
     <div class="container-fluid">
         <div class="col-md-12 col-sm-12 col xs-12">
             <div class="section-title">
@@ -10,7 +11,7 @@ include '../admin.php';
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid mb-5">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="active nav-item"><a class="active nav-link" data-toggle="tab" href="#home">Pending</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu1">Approved</a></li>
@@ -30,6 +31,5 @@ include '../admin.php';
             </div>
         </div>
     </div>
-</div>
 </div>
 <?php include '../footer.php' ?>

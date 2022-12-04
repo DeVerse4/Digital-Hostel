@@ -94,6 +94,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/Digital-Hostel/Gallery/gallery.php">Gallery</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Digital-Hostel/Gallery/gallery.php">Event</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Digital-Hostel/feedback.php">Feedback</a>
+                    </li>
                     <?php if ($mode == "admin") { ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -115,15 +121,15 @@
                             <a class="dropdown-item" href="/Digital-Hostel/alluserdetails.php">Student details</a>
                             <a class="dropdown-item" href="/Digital-Hostel/roomAllotment.php">Room Alloatment</a>
                             <a class="dropdown-item" href="/Digital-Hostel/roomReport.php">Room Report</a>
-                            <a class="dropdown-item" href="/Digital-Hostel/">Add Notice</a>
-                            <a class="dropdown-item" href="/Digital-Hostel/">Feedbacks</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/notices.php">Add Notice</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/FeedbackReport.php">Feedbacks</a>
                             <a class="dropdown-item" href="/Digital-Hostel/Complaint/complaintReport.php">Complains</a>
                         </div>
                     </li>
                     <?php } ?>
                     <?php if ($mode == "student") { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Digital-Hostel/">Notices</a>
+                        <a class="nav-link" href="/Digital-Hostel/notices.php">Notices</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="/Digital-Hostel/" role="button" data-toggle="dropdown"
@@ -131,8 +137,10 @@
                             Services
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/Digital-Hostel/pass_system/passform.php">Generate Pass</a>
-                            <a class="dropdown-item" href="/Digital-Hostel/findFriend.php">Find Friend</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/pass_system/passform.php"><b>Generate
+                                    Pass</b></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/Digital-Hostel/findFriend.php"><b>Find Friend</b></a>
                         </div>
                     </li>
                     <?php } ?>
@@ -144,26 +152,37 @@
                     <li class="nav-item dropdown">
                         <a class="nav-profile dropdown-toggle" href="/Digital-Hostel/" role="button"
                             data-toggle="dropdown" aria-expanded="false">
+                            <?php
+                        include_once "admin.php";
+                        $kk = isPhoto($id);
+                        $rrr = mysqli_fetch_row($kk);
+                        if ($rrr[0])
+                            echo "<img src='Photo.php?id=$id' height='40' width='40'
+                        style='border-radius: 30px; border: 1px solid black;' alt='myUser'></a>";
+                        else {
+                            ?>
                             <img src="/Digital-Hostel/images/default.png" height="40" width="40"
-                                style="border-radius: 30px; border: 1px solid black;" alt="User"></a>
-
+                                style="border-radius: 30px; border: 1px solid black;" alt="User">
+                        </a>
+                        <?php } ?>
                         <div class="dropdown-menu dropdown-menu-right ">
-                            <a class="dropdown-item">Hello,
-                                <?php echo $name; ?>
+                            <a class="dropdown-item"><b>Hello,
+                                    <?php echo $name; ?>
+                                </b>
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/Digital-Hostel/dashboard/studentDashboard.php">Dashboard</a>
-                            <!-- <li class="divider"></li> -->
-                            <a class="dropdown-item" href="/Digital-Hostel/">Update Profile</a>
-                            <!-- <li class="divider"></li> -->
-                            <a class="dropdown-item" href="/Digital-Hostel/">Change Password</a>
+                            <a class="dropdown-item"
+                                href="/Digital-Hostel/dashboard/studentDashboard.php"><b>Dashboard</b></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/Digital-Hostel/forgetpassword/forgetrequest.php"><b>Change
+                                    Password</b></a>
                             <div class="dropdown-divider"></div>
                             <?php if ($mode != "admin") { ?>
                             <a class="dropdown-item" href="/Digital-Hostel/Feedback.php"><b>Feedback</b></a>
-                            <!-- <li class="divider"></li> -->
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item"
                                 href="/Digital-Hostel/Complaint/complaint.php"><b>Complaints</b></a>
-                            <!-- <li class="divider"></li> -->
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/Digital-Hostel/Contactus.php"><b>Contact us</b></a>
                             <div class="dropdown-divider"></div>
                             <?php } ?>

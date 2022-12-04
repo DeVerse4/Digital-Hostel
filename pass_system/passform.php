@@ -1,69 +1,74 @@
 <?php
 include "../header.php";
 $id = $_SESSION['id'];
-if (isset($_GET['pr'])) {
+if (isset($_GET['pr'])) 
     include 'pendingRequest.php?passid=' . $_GET['pr'];
-}
+include_once "../admin.php";
 ?>
-
-
-<div class="form-container" style='background: #f1f2f6'>
+    <style>
+      .lbl {text-align:right;}
+    </style>
     <div class="container">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="page-title">
-                <h1 class="h2-responsive font-weight">Pass Generation Form</h1>
-            </div>
-        </div>
-    </div>
-    <div class="reg-form">
-        <form class="form-signin" action="pass_submit.php" method="post">
-            <div class="form-section ">
-                <div class="form-elements">
-                    <label for="inputEmail" class="input-label">Name</label>
-                    <input type="text" id="inputEmail" name="name" class="form-control" value='<?php echo $name; ?>'
-                        placeholder="Name" required disabled>
-                </div>
-                <div class="form-elements">
-                    <label for="collegeID" class="input-label">College ID</label>
-                    <input type="text" id="inputcollegeid" name="collegeid" class="form-control"
-                        value="<?php echo $id; ?>" required disabled>
-                </div>
-                <div class="form-elements">
-                    <label for="inputName" class="input-label">Room No</label>
-                    <input type="text" id="inputName" name="room_no" class="form-control" placeholder="Room Number"
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <form action="pass_submit.php" method="post">
+           <table class="table table-stripped table-hover">
+             <tr>
+             <td colspan=4 style="text-align:center;font-size:20px;">Pass Generation Form</td>
+             </tr>
+             <tr>
+               <td class="lbl">Name</td>
+               <td><input type="text" id="inputEmail" name="name" class="form-control" value='<?php echo $name; ?>'
+                        placeholder="Name" readonly></td>
+               <td class="lbl">College ID</td>
+               <td><input type="text" id="inputcollegeid" name="collegeid" class="form-control"
+                        value="<?php echo $id; ?>" readonly></td>
+             </tr>
+             <tr>
+                <td class="lbl">Room No</td>
+                <td><input type="text" id="inputName" name="room_no" value="<?php echo getRoom($id); ?>" readonly class="form-control" placeholder="Room Number"
                         required autofocus>
-                </div>
-                <div class="form-elements">
-                    <label for="inputName" class="input-label">Phone Number</label>
-                    <input type="text" id="inputName" name="phone_no" class="form-control" placeholder="Phone Number"
+                </td>
+                <td class="lbl">Phone Number</td>
+                <td><input type="text" id="inputName" name="phone_no" class="form-control" placeholder="Phone Number" value="<?php echo getMobile($id); ?>"
                         required autofocus>
-                </div>
-                <div class="form-elements">
-                    <label for="inputPassword" class="input-label">Destination Address</label>
-                    <input type="text" id="inputPassword" name="destination" class="form-control"
+                </td>
+             </tr>
+             <tr>
+                <td class="lbl">Destination Address</td>
+                <td><input list="cty" name="destination" class="form-control"
                         placeholder="Destination Address" required>
-                </div>
-                <div class="form-elements">
-                    <label for="inputPassword" class="input-label">Purpose</label>
-                    <input type="text" id="inputPassword" name="purpose" class="form-control" placeholder="Purpose"
+                <datalist id="cty">
+                <?php
+                   $x = getCity();
+                   for($i=0;$i<mysqli_num_rows($x);$i++)
+                   {
+                      $r = mysqli_fetch_row($x);
+                      echo "<option value='$r[0]'>";
+                   }                   
+                ?>
+                </datalist>
+                </td>
+                <td class="lbl">Purpose</td>
+                <td><input type="text" id="inputPassword" name="purpose" class="form-control" placeholder="Purpose"
                         required>
-                </div>
-                <div class="form-elements">
-                    <label for="outd" class="input-label">Out Date</label>
-                    <input type="date" id="outd" name="outdate" class="form-control" required>
-                </div>
-                <div class="form-elements">
-                    <label for="rdate" class="input-label">Return Date</label>
-                    <input type="date" id="rdate" name="returndate" class="form-control" required>
-                </div>
-
-            </div>
-
-            <button class="btn btn-md btn-block" type="submit" name="submit">Generate Pass</button>
-        </form>
+                </td>
+             </tr>
+             <tr>
+                <td class="lbl">Out Date</td>
+                <td><input type="date" id="outd" name="outdate" class="form-control" required>
+                </td>
+                <td class="lbl">Return Date</td>
+                <td><input type="date" id="rdate" name="returndate" class="form-control" required>
+                </td>
+            </tr>
+             <tr>
+             <td colspan=4 style="text-align:center">
+              <button class="btn btn-md btn-primary btn-block" type="submit" name="submit">Generate Pass</button>
+             </td>
+             <?php if(isset($_GET["pa"])) echo "<tr><td colspan=4>Pass request send to Admin for Approve</td></tr>"; ?>
+            </tr>
+           </form>
+      </table>
     </div>
-</div>
-
-
-
+  </div>
 <?php include '../footer.php'; ?>
