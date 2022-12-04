@@ -365,6 +365,12 @@ include_once '../admin.php';
                                                         ?>
 
                                                     </select>
+
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="email" class="input-label">Graduation Year: </label>
+                                                    <input type="text" class="form-control" name="fathocc"
+                                                        placeholder="Father's Occupation" />
                                                 </div>
                                             </div>
                                             <div class="row inputFlds">
@@ -635,7 +641,6 @@ include_once '../admin.php';
             <div class="col-md-1"></div>
         </div>
     </div>
-
     <script>
         const uploadImgBtn = document.querySelector('.uploadImgBtn');
         const cancelBtn = document.querySelector('.cancelBtn');
@@ -654,3 +659,4 @@ include_once '../admin.php';
     <?php
     include '../footer.php';
     ?>
+

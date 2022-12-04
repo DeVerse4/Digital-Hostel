@@ -1,7 +1,6 @@
 <?php
 include "../admin.php";
 include "../header.php";
-//  include "../admin.php";
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -15,4 +14,5 @@ if (isset($_SESSION['id'])) {
 
 }
 include "../footer.php";
+
 ?>

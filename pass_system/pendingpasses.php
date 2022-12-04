@@ -26,7 +26,6 @@
                                 if (isset($_SESSION['id'])) {
                                     $mode = $_SESSION['mode'];
                                     $username = $_SESSION['id'];
-
                                     $dsa = connect();
                                     $query = "SELECT * FROM `passgeneration` WHERE status='Pending'";
                                     $result = mysqli_query($dsa, $query);

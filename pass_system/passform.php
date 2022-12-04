@@ -71,6 +71,4 @@ include_once "../admin.php";
       </table>
     </div>
   </div>
-
-
 <?php include '../footer.php'; ?>

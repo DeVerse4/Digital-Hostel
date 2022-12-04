@@ -879,7 +879,6 @@ body {
     border-radius: 10px;
     transition: 0.5s ease-in;
 }
-
 .fa-angle-down:before {
     content: "\f107";
     font-family: "Font Awesome 5 Free";
@@ -889,4 +888,3 @@ body {
     margin-left: 10px;
 }
 
-/*  */
