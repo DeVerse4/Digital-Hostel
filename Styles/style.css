@@ -857,3 +857,36 @@ body {
     margin-bottom: 1rem;
     z-index: 1;
 }
+
+/* FAQs */
+.faq h4 {
+    margin: 20px;
+    font-size: 18px !important;
+    text-align: left;
+}
+
+.faq h4 a {
+    color: var(--blue);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.faq-group .faq-panel {
+    height: 100%;
+    margin: 20px;
+    background-color: #fff;
+    border: 1px solid var(--blue);
+    border-radius: 10px;
+    transition: 0.5s ease-in;
+}
+
+.fa-angle-down:before {
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--blue);
+    margin-left: 10px;
+}
+
+/*  */

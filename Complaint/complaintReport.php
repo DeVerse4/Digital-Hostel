@@ -1,6 +1,6 @@
 <?php
 include "../header.php";
-include "../admin.php";
+// include "../admin.php";
 ?>
 <table class="table table-striped table-hover" style="height: 50vh;">
     <tr>
@@ -9,7 +9,15 @@ include "../admin.php";
         </th>
     </tr>
     <tr>
-        <th> Sno </th><th>College Id</th><th>Subject</th><th>Complaint Message</th><th>Complaint Date</th><th>Complaint Status</th><th>Resolve Message</th><th>Resolve Date</th><th>Action</th>
+        <th> Sno </th>
+        <th>College Id</th>
+        <th>Subject</th>
+        <th>Complaint Message</th>
+        <th>Complaint Date</th>
+        <th>Complaint Status</th>
+        <th>Resolve Message</th>
+        <th>Resolve Date</th>
+        <th>Action</th>
     </tr>
     <?php
     $x = getAllComplaintsReport();
@@ -34,4 +42,3 @@ if (isset($_GET["v"])) {
 
 include "../footer.php";
 ?>
-

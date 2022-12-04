@@ -1,7 +1,7 @@
 <?php
 ob_start();
-include("../header.php");
-include("../admin.php");
+include_once("../header.php");
+include_once("../admin.php");
 $buffer = ob_get_contents();
 ob_end_clean();
 $title = "Gallery | Arya Bhatta Hostel";
@@ -25,7 +25,7 @@ echo $buffer;
     } else {
         $collegeid = $_SESSION["id"];
         echo '
-            <div class="container mb-5 uploadForm" id="uploadForm">
+            <div class="container fade-in mb-5 uploadForm" id="uploadForm">
             <div class="row col-md-12">
                 <div class="col-md-3 col-sm-2 col-xm-2">
                 </div>
@@ -51,7 +51,7 @@ echo $buffer;
                             </div>
                         </div>
                         <div class="btns">
-                            <button name="cancel" class="btn btn-md btn-outline-danger cancelBtn">Cancel</button>
+                            <button class="btn btn-md btn-outline-danger cancelBtn" type="button">Cancel</button>
                             <button class="btn btn-md btn-primary" id="uploadBtn" type="submit">Upload a
                                 Picture</button>
                         </div>
@@ -118,7 +118,7 @@ echo $buffer;
     ?>
     <div class="image" data-name=<?php echo "$rs[3]"; ?>>
         <span class="d-flex flex-column justify-content-between border-primary">
-            <img src=<?php echo "fetchPhoto.php?n=$rs[0]"; ?> alt="">
+            <img src=<?php echo "fetchPhoto.php?n=$rs[0]"; ?> style="height:300px;" class="img img-thumbnail" alt="">
             <!-- <?php
         if ($id == "") {
             echo '';
@@ -153,7 +153,7 @@ echo $buffer;
 </div>
 
 <?php
-include '../footer.php';
+include_once '../footer.php';
 ?>
 <script src="/Digital-Hostel/Scripts/filter-img.js"></script>
 <script src="/Digital-Hostel/Scripts/script.js"></script>

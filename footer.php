@@ -1,6 +1,6 @@
  <!-- Start footer -->
  <footer class="text-center text-lg-start text-muted font-weight-bold mb-3" style='background: #f1f2f6'>
-     <section class="d-flex justify-content-center justify-content-lg-between border-bottom">
+     <section class="d-flex justify-content-center justify-content-lg-between border-bottom p-3">
          <div class="me-5 d-none d-lg-block">
          </div>
          <div>
@@ -85,6 +85,9 @@
 
  <!--Custom JS-->
  <script src="/Digital-Hostel/Scripts/script.js"></script>
+ <!-- For Sweet alerts -->
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
  </body>
 
