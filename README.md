@@ -11,13 +11,17 @@ The project utilized PHP and MySQL to build a robust back-end infrastructure for
 ## Key Features:
 Digital Hostel offers a range of features designed to simplify hostel management. Some of the key features include:
 
-#### Student Registration: The application enables students to register themselves for hostel accommodation online. The registration process is easy and intuitive, and the students can provide all the necessary details, including personal information and academic details.
+#### Student Registration: 
+The application enables students to register themselves for hostel accommodation online. The registration process is easy and intuitive, and the students can provide all the necessary details, including personal information and academic details.
 
-#### Room Allocation: The hostel staff can use the application to allocate rooms to students. The application ensures that the room allocation process is fair and transparent and eliminates the need for manual intervention.
+#### Room Allocation: 
+The hostel staff can use the application to allocate rooms to students. The application ensures that the room allocation process is fair and transparent and eliminates the need for manual intervention.
 
-#### Event Gallery: Very Responsive gallery in which the authorised hostellers can upload and see images of the various events and the premises.
+#### Event Gallery: 
+Very Responsive gallery in which the authorised hostellers can upload and see images of the various events and the premises.
 
-#### Complaints and Feedback: The application allows students to register complaints or provide feedback online. The complaints are automatically forwarded to the hostel staff for resolution.
+#### Complaints and Feedback: 
+The application allows students to register complaints or provide feedback online. The complaints are automatically forwarded to the hostel staff for resolution.
 
 ## Conclusion:
 Overall, the Digital Hostel project is an innovative solution that simplifies the management of hostels. The project's second prize win at URJIT: Open House Project Presentation is a testament to the team's hard work and dedication to delivering a high-quality websites.
