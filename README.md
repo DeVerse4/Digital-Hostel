@@ -17,6 +17,12 @@ The application enables students to register themselves for hostel accommodation
 #### Room Allocation: 
 The hostel staff can use the application to allocate rooms to students. The application ensures that the room allocation process is fair and transparent and eliminates the need for manual intervention.
 
+#### Gate Pass Generation System: 
+The students can generate the gate pass for going outside the premises over this application. The hostel pass will have to be authorized by the warden for making it valid.
+
+#### Attendance system: 
+Attendance system for hostellers is also integrated within the application.
+
 #### Event Gallery: 
 Very Responsive gallery in which the authorised hostellers can upload and see images of the various events and the premises.
 
