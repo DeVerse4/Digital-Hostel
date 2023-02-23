@@ -148,6 +148,11 @@ body {
         font-size: 14px !important;
         width: 350px !important;
     }
+
+    #newsletter {
+        display: none !important;
+        background-color: #333;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -157,7 +162,15 @@ body {
 
     .carousel-caption p {
         font-size: 14px !important;
-        width: 350px !important;
+        width: 260px !important;
+    }
+    .carousel-caption .btns {
+        margin-top: 10px !important;
+        font-size: 14px !important;
+        justify-content: space-between;   
+    }
+    .carousel-caption a {
+        padding: 10px 25px !important;
     }
 }
 
@@ -203,6 +216,8 @@ body {
 
 .carousel-caption .btns {
     margin-top: 50px;
+    display: flex;
+    gap: 20px;
 }
 
 .carousel-caption h3 {
@@ -229,7 +244,7 @@ body {
 }
 
 .carousel-caption .contact-btn {
-    margin-left: 30px;
+    
     color: var(--blue);
     background: var(--white);
 }
@@ -264,6 +279,7 @@ body {
     color: var(--blue);
     margin-bottom: 5px;
     text-align: center;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
 }
 
 .page-title {
@@ -281,10 +297,8 @@ body {
 .section-title h2 {
     text-transform: uppercase;
     font-family: "Nunito Sans", sans-serif;
-    font-weight: 700;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
     margin: 2rem 0 2rem 0;
-    font-weight: 600;
 }
 
 /*Facility*/
@@ -372,7 +386,7 @@ body {
 .swiper-slide {
     background-position: center;
     background-size: cover;
-    max-width: 350px;
+    max-width: 370px;
     min-height: 350px;
     background: var(--white);
     margin: 0 20px;
@@ -390,6 +404,7 @@ body {
     background: var(--white);
     padding: 60px 40px;
     text-align: center;
+    height: 300px;
     overflow: hidden;
 }
 
@@ -426,7 +441,6 @@ body {
 
 .testimonials .card .content .rating {
     width: 100%;
-    height: 100%;
     margin: 0 auto 10px;
     color: var(--blue);
 }
@@ -571,14 +585,18 @@ body {
     padding: 13px 15px 13px 10px;
 }
 
-.preview-box .details .title {
+.preview-box .details .title, 
+.preview-box .details .name{
     display: flex;
     font-size: 18px;
     font-weight: 500;
+    align-items: center;
 }
 
-.details .title p {
+.details .title p,
+.details .name b {
     margin-left: 5px;
+    margin-bottom: 0;
     font-size: 18px;
     font-weight: 600;
 }
@@ -879,6 +897,7 @@ body {
     border-radius: 10px;
     transition: 0.5s ease-in;
 }
+
 .fa-angle-down:before {
     content: "\f107";
     font-family: "Font Awesome 5 Free";
@@ -888,3 +907,4 @@ body {
     margin-left: 10px;
 }
 
+/*  */

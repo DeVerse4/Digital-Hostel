@@ -33,11 +33,13 @@ include "../header.php";
     ?>
 </table>
 <?php
-if (isset($_GET["s"])) {
-    echo "<script> alert('Ur Complaints Successfully Deleted...')</script>";
+if (isset($_SESSION['deleteComp'])) {
+    echo "<script>alert('" . $_SESSION['deleteComp'] . "')</script>";
+    unset($_SESSION['deleteComp']);
 }
-if (isset($_GET["v"])) {
-    echo "<script> alert('Complaints Successfully Resolved...')</script>";
+if (isset($_SESSION['updCom'])) {
+    echo "<script>alert('" . $_SESSION['updCom'] . "')</script>";
+    unset($_SESSION['updCom']);
 }
 
 include "../footer.php";

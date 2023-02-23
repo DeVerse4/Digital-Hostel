@@ -7,4 +7,3 @@ $dob = $_REQUEST['dob'];
 include '../admin.php';
 $x = updProfile($collegeid, $name, $dob);
 header("location:studentDashboard.php?p=$x");
-

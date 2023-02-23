@@ -1,6 +1,14 @@
 <?php
 include 'header.php';
+// include 'admin.php';
 ?>
+<style>
+    .reg-form {
+        border-radius: 1rem;
+        background-color: #fff;
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    }
+</style>
 
 <div class="form-container" style='background: #f1f2f6'>
     <div class="container">
@@ -74,4 +82,5 @@ include 'header.php';
 </div>
 
 <?php
-include 'footer.php';
+include_once 'footer.php';
+?>

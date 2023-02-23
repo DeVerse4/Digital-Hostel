@@ -25,7 +25,7 @@ echo $buffer;
     } else {
         $collegeid = $_SESSION["id"];
         echo '
-            <div class="container fade-in mb-5 uploadForm" id="uploadForm">
+            <div class="container mb-5 uploadForm" id="uploadForm">
             <div class="row col-md-12">
                 <div class="col-md-3 col-sm-2 col-xm-2">
                 </div>
@@ -51,7 +51,7 @@ echo $buffer;
                             </div>
                         </div>
                         <div class="btns">
-                            <button class="btn btn-md btn-outline-danger cancelBtn" type="button">Cancel</button>
+                            <button name="cancel" type="button" class="btn btn-md btn-outline-danger cancelBtn">Cancel</button>
                             <button class="btn btn-md btn-primary" id="uploadBtn" type="submit">Upload a
                                 Picture</button>
                         </div>
@@ -118,7 +118,7 @@ echo $buffer;
     ?>
     <div class="image" data-name=<?php echo "$rs[3]"; ?>>
         <span class="d-flex flex-column justify-content-between border-primary">
-            <img src=<?php echo "fetchPhoto.php?n=$rs[0]"; ?> style="height:300px;" class="img img-thumbnail" alt="">
+            <img src=<?php echo "fetchPhoto.php?n=$rs[0]"; ?> style="height:300px;" class="img img-thumbnail" id="myImg" alt="<?php echo "$rs[1]"; ?>">
             <!-- <?php
         if ($id == "") {
             echo '';
@@ -143,6 +143,7 @@ echo $buffer;
 <div class="preview-box">
     <div class="details">
         <span class="title">Image Catagory: <p>Not defined</p></span>
+        <span class="name">Credit: <b>Not defined</b></span>
         <span class="icon fas fa-times"></span>
     </div>
     <div class="image-box">

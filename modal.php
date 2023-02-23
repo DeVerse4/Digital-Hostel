@@ -16,22 +16,18 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="exampleDropdownFormEmail1" class="font-weight-bold">College ID</label>
-                            <input type="text" name="collegeid" class="form-control" id="exampleDropdownFormEmail1"
-                                placeholder="College ID" required>
+                            <input type="text" name="collegeid" class="form-control" id="exampleDropdownFormEmail1" placeholder="College ID" required>
                         </div>
                         <div class="form-group">
                             <div class="d-flex justify-content-between">
                                 <label for="exampleDropdownFormPassword" class="font-weight-bold">Password</label>
-                                <a class="text-primary"
-                                    href="/Digital-Hostel/forgetpassword/forgetrequest.php">Forgot?</a>
+                                <a class="text-primary" href="/Digital-Hostel/forgetpassword/forgetrequest.php">Forgot?</a>
                             </div>
-                            <input type="password" name="pass" class="form-control" id="exampleDropdownFormPassword1"
-                                placeholder="Password" required>
+                            <input type="password" name="pass" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password" required>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <a class="text-primary" href="/Digital-Hostel/Registration/registration.php"
-                                class="login btn btn-primary">
-                                Already registered?
+                            <a class="text-primary" href="/Digital-Hostel/Registration/registration.php" class="login btn btn-primary">
+                                Not registered?
                             </a>
                         </div>
                     </div>

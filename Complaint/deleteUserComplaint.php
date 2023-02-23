@@ -3,4 +3,6 @@
 include "../admin.php";
 $sno = $_REQUEST["n"];
 $x = deleteComplaint($sno);
-header("location:complaint.php?s=1");
+session_start();
+$_SESSION['deleteComp'] = "You complaint deteted ✔";
+header("location:complaint.php");

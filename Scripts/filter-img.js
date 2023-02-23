@@ -32,6 +32,7 @@
     const previewBox = document.querySelector(".preview-box"),
         previewImg = previewBox.querySelector("img"),
         categoryName = previewBox.querySelector(".title p"),
+        uploadedBy = previewBox.querySelector(".name b"),
         closeIcon = previewBox.querySelector(".icon"),
         shadow = document.querySelector(".shadow");
 
@@ -41,7 +42,9 @@
         document.querySelector("body").style.overflow = "hidden";
         let selectedPrevImg = element.querySelector("img").src; //getting user clicked img source link and store it
         let selectedImgCategory = element.getAttribute("data-name"); // getting user clicked data name value
+        let selectedId = document.getElementById("myImg").alt; // getting ID from clicked img alt value
         categoryName.textContent = selectedImgCategory; // passing data-name value to catagory value
+        uploadedBy.textContent = selectedId; // passing alt value to uploadedBy value
         previewImg.src = selectedPrevImg; // passing user click img source in preview source
         previewBox.classList.add("show"); // show the preview box
         shadow.classList.add("show"); // show the grey color background

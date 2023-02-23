@@ -6,5 +6,11 @@ $subject = $_REQUEST["subject"];
 $msg = $_REQUEST["complaintDesc"];
 include "../admin.php";
 $x = addComplaint($collegeid, $subject, $msg);
-header("location:complaint.php?s=0");
+if ($x == 1) {
+    $_SESSION['addComp'] = "Complaint added ✔";
+    header("location:complaint.php");
+} else {
+    $_SESSION['addComp'] = "Complaint not added ✖";
+    header("location:complaint.php");
+}
 ?>

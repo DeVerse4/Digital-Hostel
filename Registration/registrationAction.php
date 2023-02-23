@@ -4,6 +4,7 @@ if (isset($_POST["submit"])) {
     $collegeid = $_POST['collegeid'];
     $name = $_POST["name"];
     $mailid = $_POST['mailid'];
+    $gender = $_POST['gender'];
     $password = $_POST["pass"];
     $confirmPassword = $_POST['confirmPassword'];
 }
@@ -43,7 +44,7 @@ try {
     // $encrypted_password = /*password_hash*/($password, PASSWORD_DEFAULT);
     $encrypted_password = $password;
 
-    $x = addUser($collegeid, $name, $encrypted_password, $mailid, $verification_code);
+    $x = addUser($collegeid, $name, $encrypted_password, $gender, $mailid, $verification_code);
 
     if ($x == 1)
         header("location: email.php?email=$mailid");

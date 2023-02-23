@@ -7,7 +7,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <div class="banner" style="background-image: url(./images/hostel1.png);"></div>
+                <div class="banner" style="background-image: url(./images/hostel.jpg);"></div>
                 <!-- <img src="./images/hostel1.png" class="img img-thumbnail d-block head-photo" alt=""> -->
                 <div class="carousel-caption">
                     <h2><span>Aryabhatta Hostel</span></h2>
@@ -15,12 +15,12 @@
                     <p>We understand that most of our students are moving away from home for the first time, so we
                         strive to make the transition as smooth as possible by providing comfortable, safe and homely
                         set-up within the campus</p>
-                    <p>
+                    <div class="btns">
                         <?php if ($id == "") { ?>
-                        <a class="reg-btn" href="Registration/registration.php">Register</a>
+                            <a class="reg-btn" href="Registration/registration.php">Register</a>
                         <?php } ?>
-                        <a href="#contact" class="contact-btn m-0">Contact</a>
-                    </p>
+                        <a href="#contact" class="contact-btn">Contact</a>
+                    </div>
                 </div>
             </div>
             <div class="carousel-item">
@@ -35,7 +35,7 @@
                         set-up within the campus</p>
                     <div class="btns">
                         <?php if ($id == "") { ?>
-                        <a class="reg-btn" href="Registration/registration.php">Register</a>
+                            <a class="reg-btn" href="Registration/registration.php">Register</a>
                         <?php } ?>
                         <a class="contact-btn" href="#contact">Contact</a>
                     </div>
@@ -167,18 +167,12 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12- col xs-12">
                 <div class="video-area">
-                    <iframe class="yt-vid" src="https://www.youtube.com/embed/lKfd6j1EBPU" title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                    <iframe class="yt-vid" src="https://www.youtube.com/embed/lKfd6j1EBPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12- col-xs-12">
                 <div class="video-area">
-                    <iframe class="yt-vid" src="https://www.youtube.com/embed/HBbMk8_IZHc" title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                    <iframe class="yt-vid" src="https://www.youtube.com/embed/HBbMk8_IZHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -205,24 +199,23 @@
             for ($i = 0; $i < mysqli_num_rows($x); $i++) {
                 $faqrow = mysqli_fetch_row($x);
             ?>
-            <div class="panel panel-default faq-panel">
-                <div class="panel-heading accordion-toggle question-toggle collapsed faq-heading" data-toggle="collapse"
-                    data-parent="#faqAccordion" data-target="#question<?php echo $faqrow[0]; ?>">
-                    <h4 class="panel-title ">
-                        <a class="ing d-flex justify-content-between"><span>Q
-                                <?php echo $faqrow[0]; ?> :
-                                <?php echo $faqrow[1]; ?>
-                            </span><span><i id="caret" class="fa-solid fa-angle-down"></i></span></a>
-                    </h4>
-                </div>
-                <div id="question<?php echo $faqrow[0]; ?>" class="panel-collapse collapse faq-answer m-4">
-                    <div class="panel-body">
-                        <p>
-                            <?php echo $faqrow[2] ?>
-                        </p>
+                <div class="panel panel-default faq-panel">
+                    <div class="panel-heading accordion-toggle question-toggle collapsed faq-heading" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question<?php echo $faqrow[0]; ?>">
+                        <h4 class="panel-title ">
+                            <a class="ing d-flex justify-content-between"><span>Q
+                                    <?php echo $faqrow[0]; ?> :
+                                    <?php echo $faqrow[1]; ?>
+                                </span><span><i id="caret" class="fa-solid fa-angle-down"></i></span></a>
+                        </h4>
+                    </div>
+                    <div id="question<?php echo $faqrow[0]; ?>" class="panel-collapse collapse faq-answer m-4">
+                        <div class="panel-body">
+                            <p>
+                                <?php echo $faqrow[2] ?>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
             <?php } ?>
         </div>
     </div>
@@ -246,13 +239,12 @@
             <div class="testimonials">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                    <div class="swiper-slide">
                             <div class="card">
                                 <div class="layer"></div>
                                 <div class="content">
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sunt in
-                                        consequuntur molestiae
+                                        Arya Bhatta hostel is absolutely superb. the environment here is very amazing, clean and green.
                                     </p>
                                     <div class="rating">
                                         <div class="flex gap-0.5">
@@ -279,12 +271,13 @@
                                 </div>
                             </div>
                         </div>
+                       
                         <div class="swiper-slide">
                             <div class="card">
                                 <div class="layer"></div>
                                 <div class="content">
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Very large ground, clean and well maintained. Courts for basketball, volleyball, badminton, etc. are available.
                                     </p>
                                     <div class="rating">
                                         <div class="flex gap-0.5">
@@ -306,17 +299,17 @@
                                         </div>
                                     </div>
                                     <div class="details">
-                                        <h3>Shujauddin Qadri <br><span>3rd year student</span></h3>
+                                        <h3>Pratik Sinha <br><span>3rd year student</span></h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="card">
+                            <div class="card d-flex ">
                                 <div class="layer"></div>
                                 <div class="content">
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Rooms are very spacious and furnished. Greenary all around. Overall good experience.
                                     </p>
                                     <div class="rating">
                                         <div class="flex gap-0.5">
@@ -348,7 +341,7 @@
                                 <div class="layer"></div>
                                 <div class="content">
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Such a high speed Wi-Fi, hot water in winter and gym facilities.
                                     </p>
                                     <div class="rating">
                                         <div class="flex gap-0.5">
@@ -370,7 +363,7 @@
                                 <div class="layer"></div>
                                 <div class="content">
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Hostel Authorities are supportive. Homelike vibes....
                                     </p>
                                     <div class="rating">
                                         <div class="flex gap-0.5">
@@ -393,6 +386,38 @@
                                     </div>
                                     <div class="details">
                                         <h3>Pritam Kumar <br><span>3rd year student</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="layer"></div>
+                                <div class="content">
+                                    <p>
+                                        Clean, secured and authentic. An awesome experience overall at Kalpana Chawla Girl's Hostel.
+                                    </p>
+                                    <div class="rating">
+                                        <div class="flex gap-0.5">
+                                            <span class=" p-0.5">
+                                                <i class="fa-solid fa-star"></i>
+                                            </span>
+                                            <span class=" p-0.5">
+                                                <i class="fa-solid fa-star"></i>
+                                            </span>
+                                            <span class=" p-0.5">
+                                                <i class="fa-solid fa-star"></i>
+                                            </span>
+                                            <span class=" p-0.5">
+                                                <i class="fa-solid fa-star"></i>
+                                            </span>
+                                            <span class=" p-0.5">
+                                                <i class="fa-solid fa-star"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="details">
+                                        <h3>Lovely Dager<br><span>3rd year student</span></h3>
                                     </div>
                                 </div>
                             </div>
@@ -427,15 +452,13 @@
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
                                     <label for="name" class="">Your name</label>
-                                    <input type="text" id="name" placeholder="Your name here" name="name"
-                                        class="form-control">
+                                    <input type="text" id="name" placeholder="Your name here" name="name" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
                                     <label for="email" class="">Your email</label>
-                                    <input type="text" id="email" placeholder="vgi@vgi.com" name="email"
-                                        class="form-control">
+                                    <input type="text" id="email" placeholder="vgi@vgi.com" name="email" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -443,8 +466,7 @@
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
                                     <label for="subject" class="">Subject</label>
-                                    <input type="text" id="subject" name="subject" placeholder="Subject"
-                                        class="form-control">
+                                    <input type="text" id="subject" name="subject" placeholder="Subject" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -452,8 +474,7 @@
                             <div class="col-md-12">
                                 <div class="md-form">
                                     <label for="message">Message</label>
-                                    <textarea type="text" id="message" placeholder="Message" name="message" rows="2"
-                                        class="form-control md-textarea" style="resize: none;"></textarea>
+                                    <textarea type="text" id="message" placeholder="Message" name="message" rows="2" class="form-control md-textarea" style="resize: none;"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -465,9 +486,7 @@
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12- col-xs-12">
                 <div class="map-area">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d224337.6852025422!2d77.49773912305412!3d28.531412787546984!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x652350c1411a5f55!2sVishveshwarya%20Group%20of%20Institutions%20(B.tech%20MBA%20B.Pharma%20B.ed%20Polytechnic%20etc%20Courses)!5e0!3m2!1sen!2sin!4v1667767246138!5m2!1sen!2sin"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d224337.6852025422!2d77.49773912305412!3d28.531412787546984!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x652350c1411a5f55!2sVishveshwarya%20Group%20of%20Institutions%20(B.tech%20MBA%20B.Pharma%20B.ed%20Polytechnic%20etc%20Courses)!5e0!3m2!1sen!2sin!4v1667767246138!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>

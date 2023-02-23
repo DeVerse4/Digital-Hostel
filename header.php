@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/Digital-Hostel/images/hostel.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -31,6 +32,19 @@
     <!--jQuery CDN-->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+    <!--Swiper JS-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!--Custom JS-->
+    <script src="/Digital-Hostel/Scripts/script.js"></script>
+
 
     <title>Arya Bhatta Hostel</title>
 </head>
@@ -46,38 +60,35 @@
         $mode = $_SESSION["mode"];
         $name = $_SESSION["name"];
     }
-    ?>
-    <?php
-    if (isset($_GET["t"]))
+    if (isset($_GET["t"])) {
         echo '<script> alert("User Successfully Registered, Login now.");</script>';
-    ?>
-    <?php
-    if (isset($_GET["k"]))
-        echo '<script> alert("Invalid Login Id & Password. Please Retry.."); </script>';
-    ?>
-    <?php
-    if (isset($_GET["q"]))
-        echo '<script> alert("Successfully Logged out...."); </script>';
-    ?>
-    <?php
-    if (isset($_GET["s"]))
-        echo '<script> alert("Complaint successfully registered...."); </script>';
-    ?>
-    <?php
-    if (isset($_GET["login"]))
-        echo '<script> alert("Logged In."); </script>';
-    ?>
-    <?php
-    if (isset($_GET["c"]))
-        echo '<script> alert("Message sent successfully..."); </script>';
-    ?>
-    <?php
-    if (isset($_GET["v"]))
+    }
+    if (isset($_SESSION['status'])) {
+        echo '<script> alert("' . $_SESSION['status'] . '");</script>';
+        unset($_SESSION['status']);
+    }
+    if (isset($_SESSION['logout'])) {
+        echo '<script> alert("' . $_SESSION['logout'] . '"); </script>';
+        unset($_SESSION['logout']);
+    }
+    if (isset($_SESSION['login'])) {
+        echo '<script> alert("' . $_SESSION['login'] . '"); </script>';
+        unset($_SESSION['login']);
+    }
+    if (isset($_SESSION['contactReq'])) {
+        echo '<script> alert("' . $_SESSION['contactReq'] . '"); </script>';
+        unset($_SESSION['contactReq']);
+    }
+    if (isset($_GET["v"])) {
         echo '<script> alert("Email Verified. You can login now."); </script>';
+    }
     ?>
-    <nav class="navbar navbar-inverse navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-inverse navbar-expand-lg sticky-top" style="
+    box-shadow: .2rem 0 1rem 0 #00000033;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/Digital-Hostel/index.php">Arya Bhatta Hostel</a>
+            <a class="navbar-brand" href="/Digital-Hostel/index.php">
+                <img src="/Digital-Hostel/images/Hostel Logo.png" alt="logo" style="height: 45px;">
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
@@ -94,12 +105,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/Digital-Hostel/Gallery/gallery.php">Gallery</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Digital-Hostel/Gallery/gallery.php">Event</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Digital-Hostel/feedback.php">Feedback</a>
-                    </li>
+
                     <?php if ($mode == "admin") { ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -124,13 +130,11 @@
                             <a class="dropdown-item" href="/Digital-Hostel/notices.php">Add Notice</a>
                             <a class="dropdown-item" href="/Digital-Hostel/FeedbackReport.php">Feedbacks</a>
                             <a class="dropdown-item" href="/Digital-Hostel/Complaint/complaintReport.php">Complains</a>
+                            <a class="dropdown-item" href="/Digital-Hostel/events/index.php">Events</a>
                         </div>
                     </li>
                     <?php } ?>
                     <?php if ($mode == "student") { ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Digital-Hostel/notices.php">Notices</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="/Digital-Hostel/" role="button" data-toggle="dropdown"
                             aria-expanded="false">
@@ -140,11 +144,23 @@
                             <a class="dropdown-item" href="/Digital-Hostel/pass_system/passform.php"><b>Generate
                                     Pass</b></a>
                             <div class="dropdown-divider"></div>
+                            <a class="dropdown-item"
+                                href="/Digital-Hostel/Complaint/complaint.php"><b>Complaints</b></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/Digital-Hostel/Feedback.php"><b>Feedback</b></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/Digital-Hostel/notices.php"><b>Notices</b></a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/Digital-Hostel/events/index.php"><b>Events</b></a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/Digital-Hostel/findFriend.php"><b>Find Friend</b></a>
                         </div>
                     </li>
                     <?php } ?>
                     <?php if ($id == "") { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Digital-Hostel/feedback.php">Feedback</a>
+                    </li>
                     <li class="nav-item ">
                         <a class="login btn btn-primary" data-toggle="modal" data-target="#loginModal">Login</a>
                     </li>
@@ -178,11 +194,6 @@
                                     Password</b></a>
                             <div class="dropdown-divider"></div>
                             <?php if ($mode != "admin") { ?>
-                            <a class="dropdown-item" href="/Digital-Hostel/Feedback.php"><b>Feedback</b></a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item"
-                                href="/Digital-Hostel/Complaint/complaint.php"><b>Complaints</b></a>
-                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/Digital-Hostel/Contactus.php"><b>Contact us</b></a>
                             <div class="dropdown-divider"></div>
                             <?php } ?>

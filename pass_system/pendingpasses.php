@@ -1,7 +1,18 @@
+<?php
+if (isset($_SESSION['denyPass'])) {
+    echo "<script>alert('" . $_SESSION['denyPass'] . "')</script>";
+    unset($_SESSION['denyPass']);
+}
+if (isset($_SESSION['approvePass'])) {
+    echo "<script>alert('" . $_SESSION['approvePass'] . "')</script>";
+    unset($_SESSION['approvePass']);
+}
+?>
+
 <div class="row justify-content-center">
     <div class="col-md-12">
         <div class="card mt-5">
-            <div class="card-body" style="overflow: scroll;">
+            <div class="card-body" style="overflow: auto;">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <table class='table table-hover table-striped'>
@@ -26,6 +37,7 @@
                                 if (isset($_SESSION['id'])) {
                                     $mode = $_SESSION['mode'];
                                     $username = $_SESSION['id'];
+
                                     $dsa = connect();
                                     $query = "SELECT * FROM `passgeneration` WHERE status='Pending'";
                                     $result = mysqli_query($dsa, $query);
@@ -44,12 +56,6 @@
                                     echo "</tbody>";
                                     echo "</table>";
                                 }
-
-                                if (isset($_GET["kk"]))
-                                    echo "Pass Successfully Approved & send on the Student mail Id......";
-                                if (isset($_GET["qq"]))
-                                    echo "Pass Denied by Authority & status send on the Student mail Id......";
-
                                 ?>
                             </tbody>
                         </table>

@@ -3,7 +3,8 @@
         <div class="card mt-5">
             <!-- <div class="card-header">
                     </div> -->
-            <div class="card-body" style="overflow: scroll;">
+
+            <div class="card-body" style="overflow: auto;">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>

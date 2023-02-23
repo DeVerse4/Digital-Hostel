@@ -3,12 +3,12 @@ function connect()
 {
     return mysqli_connect("localhost", "root", "", "digital_hostel", "3306");
 }
-function addUser($collegeid, $name, $encrypted_password, $mailid, $verification_code)
+function addUser($collegeid, $name, $encrypted_password, $gender, $mailid, $verification_code)
 {
     $dsn = connect();
     $x = mysqli_query($dsn, "INSERT INTO tbllogin(`collegeid`,`pass`,`lastmodified`) values('$collegeid','$encrypted_password',now())");
     if ($x == 1) {
-        $x = mysqli_query($dsn, "INSERT INTO tblregistration(`collegeid`, `name`, `mailid`, `verification_code`, `lastmodified`) values('$collegeid','$name','$mailid', '$verification_code',now())");
+        $x = mysqli_query($dsn, "INSERT INTO tblregistration(`collegeid`, `name`, `mailid`, `gender`, `verification_code`, `lastmodified`) values('$collegeid','$name','$mailid','$gender', '$verification_code',now())");
         return $x;
     }
     return 0;
@@ -182,13 +182,13 @@ function updProfile($id, $name, $dob)
     $x = mysqli_query($dsn, "update tblregistration set name='$name',dob = '$dob' where collegeid='$id'");
     return $x;
 }
-function addAcademic($id, $course, $branch, $uni, $roll, $year)
+function addAcademic($id, $course, $branch, $uni, $sem, $roll, $year)
 {
     $dsn = connect();
     $x = mysqli_query($dsn, "select count(*) from tblAcademic where collegeid = '$id'");
     $r = mysqli_fetch_row($x);
     if ($r[0] == 0)
-        $x = mysqli_query($dsn, "insert into tblAcademic(collegeid,course,branch,university,roll,gyear,lastmodified) values('$id','$course','$branch' ,'$uni','$roll','$year',now())");
+        $x = mysqli_query($dsn, "insert into tblAcademic(collegeid,course,branch,university,semester,roll,gyear,lastmodified) values('$id','$course','$branch' ,'$uni',''$sem,'$roll','$year',now())");
     else
         $x = mysqli_query($dsn, "update tblAcademic set course='$course',branch='$branch',university='$uni',roll='$roll',gyear='$year' where collegeid='$id'");
 
@@ -257,7 +257,8 @@ function uploadNotice($title, $description, $data)
     $x = mysqli_query($dsn, "INSERT INTO `tblnotices`(`title`, `description`, `noticefile`, `noticedate`) VALUES ('$title','$description','$data',now())");
     return $x;
 }
-function fetchNotice($n){
+function fetchNotice($n)
+{
     $dsn = connect();
     $x = mysqli_query($dsn, "SELECT * FROM tblnotices order by noticedate desc limit $n");
     return $x;
@@ -284,5 +285,17 @@ function deleteFeedback($sno)
 {
     $dsn = connect();
     $x = mysqli_query($dsn, "DELETE FROM `tblfeedback` WHERE `SNO` = $sno");
+    return $x;
+}
+function registerevent($collegeid, $team, $members, $eventname, $catagory, $phone)
+{
+    $dsn = connect();
+    $x = mysqli_query($dsn, "INSERT INTO `tbleventregistration`(`collegeid`, `team`, `members`, `eventname`, `catagory`, `phone`, `reg_date`) VALUES ('$collegeid', '$team', '$members', '$eventname', '$catagory', '$phone',now())");
+    return $x;
+}
+function eventStudent()
+{
+    $dsn = connect();
+    $x = mysqli_query($dsn, "SELECT * FROM `tbleventregistration` ORDER BY 1");
     return $x;
 }

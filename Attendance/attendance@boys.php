@@ -25,9 +25,8 @@ include '../header.php';
                     <div class="card-body">
                         
                       <form action=AttendanceAction.php method=get>
-
                             <table class="table table-bordered" style="overflow: scroll;">
-           <thead>
+                            <thead>
                               <tr><th colspan=5 style="text-align:center;"><input type=radio name=timing value='Morning' checked> Morning Attendance   <input type=radio name=timing value='Evening' checked> Evening Attendance</td></tr>
                               <tr>
                                     <th>Room NO</th>
@@ -69,9 +68,7 @@ include '../header.php';
                                         echo "</table>No Record Found";
                                     }
                                 }else {
-
                                     $query = "SELECT a.roomno,reg.name,a.collegeid FROM tblroomallotment a,tblregistration reg WHERE a.collegeid=reg.collegeid and reg.gender='Male';";
-
                                     // $query = "SELECT * FROM tblregistration WHERE GENDER='M' order by 1";
                                     $query_run = mysqli_query($con, $query);
                                     

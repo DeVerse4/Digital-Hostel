@@ -79,7 +79,8 @@ if ($query == 1) {
 } else {
   echo "Data not inserted";
 }
-
-header("location:passReport.php?kk=1");
+session_start();
+$_SESSION['approvePass'] = "Pass Successfully Approved ✔ & status send on the Student mail Id";
+header("location:passReport.php");
 
 ?>

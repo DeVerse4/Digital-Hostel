@@ -154,7 +154,7 @@ include_once '../admin.php';
     .uploadImgBtn {
         position: relative;
         bottom: 50px;
-        right: 50px;
+        right: 90px;
         border: 1px solid #4B49AC;
         border-radius: 5px;
     }
@@ -209,8 +209,7 @@ include_once '../admin.php';
                                             <center>Personal details</center>
                                         </h1>
                                     </div>
-                                    <div
-                                        class="d-flex justify-content-center flex-column align-items-center user-image">
+                                    <div class="d-flex justify-content-center flex-column align-items-center user-image">
                                         <?php
                                         $x = isPhoto($id);
                                         $rs = mysqli_fetch_row($x);
@@ -218,24 +217,20 @@ include_once '../admin.php';
                                             echo "<img src=Photo.php?id=$id height=250 width=250 style='border-radius:125px;' alt='user'>";
                                         else {
                                         ?>
-                                        <img src="/Digital-Hostel/images/user.png" alt="user">
+                                            <img src="/Digital-Hostel/images/default.png" height=250 width=250 style='border-radius:125px;' alt="user">
                                         <?php } ?>
                                         <span class="edit-icon">
-                                            <p class="uploadImgBtn" style="color:white;">
-                                                <img
-                                                    src="https://img.icons8.com/fluency-systems-regular/48/null/pencil--v1.png" />
-                                                edit
+                                            <p class="uploadImgBtn font-weight-bold">
+                                                <img src="https://img.icons8.com/fluency-systems-regular/48/null/pencil--v1.png" />
+                                                Edit
                                             </p>
                                         </span>
                                         <div class="upload-img" id="uploadImgForm">
-                                            <form action="userPhotoAction.php" enctype="multipart/form-data"
-                                                method=post>
+                                            <form action="userPhotoAction.php" enctype="multipart/form-data" method=post>
                                                 <input type="file" class="p-1" name="photo" id="image" accept="image/*">
                                                 <div class="d-flex">
-                                                    <input type="submit" name="save" value="Save" class="py-1"
-                                                        style="background-color:#4B49AC; color:#fff;" />
-                                                    <input type="button" class="cancelBtn ml-1 py-1" value="Cancel"
-                                                        style="background-color:#4B49AC; color:#fff;" />
+                                                    <input type="submit" name="save" value="Save" class="py-1" style="background-color:#4B49AC; color:#fff;" />
+                                                    <input type="button" class="cancelBtn ml-1 py-1" value="Cancel" style="background-color:#4B49AC; color:#fff;" />
                                                 </div>
                                             </form>
                                         </div>
@@ -256,38 +251,22 @@ include_once '../admin.php';
                                         <div class="input-group form-section" style="justify-content: space-evenly">
                                             <div class="row inputFlds ">
                                                 <div class="col-md-6">
-                                                    <label for="name" class="input-label">First Name: </label>
-                                                    <input type="text" class="form-control " name="name"
-                                                        placeholder="Your Name" value="<?php echo $name; ?>" required
-                                                        autofocus />
+                                                    <label for="name" class="input-label">Name: </label>
+                                                    <input type="text" class="form-control " name="name" placeholder="Your Name" value="<?php echo $name; ?>" required autofocus />
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="dob" class="input-label">D.O.B: </label>
-                                                    <input type="date" value="<?php echo $dob; ?>" class="form-control"
-                                                        name="dob" max='2003-01-01' required autofocus />
+                                                    <input type="date" value="<?php echo $dob; ?>" class="form-control" name="dob" max='2003-01-01' required autofocus />
                                                 </div>
                                             </div>
                                             <div class=" row inputFlds">
                                                 <div class="col-md-6">
                                                     <label for="collegeid" class="input-label">College ID: </label>
-                                                    <input type="text" class="form-control" name="collegeid"
-                                                        placeholder="College ID" value=<?php echo $id; ?> readonly />
+                                                    <input type="text" class="form-control" name="collegeid" placeholder="College ID" value=<?php echo $id; ?> readonly />
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label for="email" class="input-label">Gender: </label>
-                                                    <select name="gender" class="form-control" required readonly>
-                                                        <option value=''>Hello I m...
-                                                            <?php
-                                                            $arr = array("Male", "Female");
-                                                            foreach ($arr as $n) {
-                                                                if ($n == $gender) {
-                                                                    echo "<option value='$n' selected>$n</option>";
-                                                                } else {
-                                                                    echo "<option value='$n' che>$n</option>";
-                                                                }
-                                                            }
-                                                            ?>
-                                                    </select>
+                                                    <label for="gender" class="input-label">Gender: </label>
+                                                    <input type="text" class="form-control" name="gender" placeholder="Gender" value="<?php echo $gender; ?>" readonly />
                                                 </div>
                                             </div>
                                             <div class="row inputFlds">
@@ -301,9 +280,11 @@ include_once '../admin.php';
                                                 ?>
                                             </div>
                                         </div>
-                                        <input class="btn btn-block btn-outline-primary" type="submit" value="Update" />
+                                        <div class="row justify-content-center">
+                                            <button class="btn" type="submit">Update</button>
+                                        </div>
+                                    </form>
                                 </div>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -365,12 +346,6 @@ include_once '../admin.php';
                                                         ?>
 
                                                     </select>
-
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label for="email" class="input-label">Graduation Year: </label>
-                                                    <input type="text" class="form-control" name="fathocc"
-                                                        placeholder="Father's Occupation" />
                                                 </div>
                                             </div>
                                             <div class="row inputFlds">
@@ -389,21 +364,25 @@ include_once '../admin.php';
 
                                                     </select>
                                                 </div>
+                                                <div class="col-md-6">
+                                                    <label for="sem" class="input-label">Semester: </label>
+                                                    <input type="text" value="<?php echo $sem; ?>" class="form-control" name="sem" placeholder="Current Semester" />
+                                                </div>
                                             </div>
                                             <div class="row inputFlds">
                                                 <div class="col-md-6">
                                                     <label for="roll" class="input-label">Roll Number: </label>
-                                                    <input type="text" value="<?php echo $roll; ?>" class="form-control"
-                                                        name="roll" placeholder="University Roll Number" />
+                                                    <input type="text" value="<?php echo $roll; ?>" class="form-control" name="roll" placeholder="University Roll Number" />
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="year" class="input-label">Graduation Year: </label>
-                                                    <input type="text" value="<?php echo $year; ?>" class="form-control"
-                                                        name="year" placeholder="Graduation Year" />
+                                                    <input type="text" value="<?php echo $year; ?>" class="form-control" name="year" placeholder="Graduation Year" />
                                                 </div>
                                             </div>
                                         </div>
-                                        <input class="btn btn-block btn-outline-primary" type="submit" value="Update" />
+                                        <div class="row justify-content-center">
+                                            <button class="btn" type="submit">Update</button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -441,13 +420,11 @@ include_once '../admin.php';
                                                 <div class="col-md-6">
                                                     <input type=hidden value='<?php echo $id; ?>' name=id />
                                                     <label for="mobile" class="input-label">Mobile No: </label>
-                                                    <input type="text" class="form-control" name="mobile"
-                                                        value="<?php echo $mobile; ?>" placeholder="9990046906" />
+                                                    <input type="text" class="form-control" name="mobile" value="<?php echo $mobile; ?>" placeholder="9990046906" />
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="email" class="input-label"> Mail Id: </label>
-                                                    <input type="text" class="form-control" name="mailid"
-                                                        value="<?php echo $mailid; ?>" placeholder="Your Mail Id" />
+                                                    <input type="text" class="form-control" name="mailid" value="<?php echo $mailid; ?>" placeholder="Your Mail Id" />
                                                 </div>
                                             </div>
                                             <div class="row inputFlds">
@@ -467,19 +444,18 @@ include_once '../admin.php';
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="pin" class="input-label">Pincode: </label>
-                                                    <input type="number" class="form-control" name="pin"
-                                                        value="<?php echo $pin; ?>" placeholder="Your pin code" />
+                                                    <input type="number" class="form-control" name="pin" value="<?php echo $pin; ?>" placeholder="Your pin code" />
                                                 </div>
                                             </div>
                                             <div class="row inputFlds">
                                                 <div class="col-md-12">
                                                     <label for="address" class="input-label">Address: </label>
-                                                    <textarea name="addr" class="form-control" id="addr"
-                                                        placeholder="Your Address"> <?php echo $address; ?></textarea>
+                                                    <textarea name="addr" class="form-control" id="addr" placeholder="Your Address"> <?php echo $address; ?></textarea>
                                                 </div>
                                             </div>
-                                            <input class="btn btn-block btn-outline-primary" type="submit"
-                                                value="Update" />
+                                            <div class="row justify-content-center">
+                                                <button class="btn" type="submit">Update</button>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
@@ -526,7 +502,6 @@ include_once '../admin.php';
                                                                 foreach ($rs as $n)
                                                                     echo "<td>$n</td>";
                                                                 echo "</tr>";
-
                                                             }
 
                                                             ?>
@@ -583,7 +558,6 @@ include_once '../admin.php';
                                                             foreach ($rs as $n)
                                                                 echo "<td>$n</td>";
                                                             echo "</tr>";
-
                                                         }
 
                                                         ?>
@@ -641,6 +615,7 @@ include_once '../admin.php';
             <div class="col-md-1"></div>
         </div>
     </div>
+
     <script>
         const uploadImgBtn = document.querySelector('.uploadImgBtn');
         const cancelBtn = document.querySelector('.cancelBtn');
@@ -659,4 +634,3 @@ include_once '../admin.php';
     <?php
     include '../footer.php';
     ?>
-

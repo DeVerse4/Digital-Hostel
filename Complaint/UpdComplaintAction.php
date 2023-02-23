@@ -4,5 +4,7 @@ $sno = $_REQUEST["sno"];
 $rmsg = $_REQUEST["rmsg"];
 include "../admin.php";
 $x = updComplaint($sno, $rmsg);
-header("location:complaintReport.php?v=1");
+session_start();
+$_SESSION['updCom'] = "Complaint updated 📃";
+header("location:complaintReport.php");
 ?>

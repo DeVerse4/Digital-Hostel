@@ -82,6 +82,8 @@ if ($query == 1) {
 } else {
   echo "Data not inserted";
 }
-header("location:passReport.php?qq=1");
+session_start();
+$_SESSION['denyPass'] = "Pass request denied ❌ & status send on the Student mail Id";
+header("location:passReport.php");
 
 ?>

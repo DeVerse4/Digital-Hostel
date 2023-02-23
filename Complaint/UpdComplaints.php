@@ -21,7 +21,6 @@ echo $buffer;
     <div class="reg-form">
         <?php
         $sno = $_REQUEST["id"];
-        include "../admin.php";
         $x = getComplaint($sno);
         $rs = mysqli_fetch_row($x);
         ?>
