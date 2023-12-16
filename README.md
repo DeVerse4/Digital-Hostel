@@ -31,3 +31,6 @@ The application allows students to register complaints or provide feedback onlin
 
 ## Conclusion:
 Overall, the Digital Hostel project is an innovative solution that simplifies the management of hostels. The project's second prize win at URJIT: Open House Project Presentation is a testament to the team's hard work and dedication to delivering a high-quality websites.
+
+![Screenshot from 2023-12-16 11-17-33](https://github.com/DeVerse4/Digital-Hostel/assets/73093103/39a392f6-d0a2-4c4b-9ea9-f371b6ddbdc9)
+
